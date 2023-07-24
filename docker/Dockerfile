@@ -53,8 +53,8 @@ RUN echo 'export PATH=$PATH:/root/go/bin' >> ~/.bashrc
 # Step 6:
 WORKDIR /work_dir
 # Step 6: Copy the file and folders into the container
-COPY . .
-COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
+COPY ./docker .
+COPY ./docker/provider-config.yaml /root/.config/notify/provider-config.yaml
 
 # Step 7: Define the entry point
 ENTRYPOINT ["bash"]
