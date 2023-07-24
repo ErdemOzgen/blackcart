@@ -56,6 +56,18 @@ Continuous automated red teaming (CART) is an advanced cybersecurity approach th
 | nuclei          | Powerful vulnerability scanner for dynamic application security testing (DAST)|
 | httpx           | Fast and multi-purpose HTTP toolkit              |
 
+
+## How to build and run ?
+
+```bash
+# Change telegram configs in .env.example
+mv docker/.env.example docker/.env
+docker build -t blackcart -f docker/Dockerfile
+docker run -it blackcart
+docker run -it --env-file .env blackcart
+
+```
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

@@ -1,6 +1,6 @@
 telegram:
-  - id: "tel"
-    telegram_api_key: "CHANGE ME"
-    telegram_chat_id: "CHANGE ME"
+  - id: "tel"                          # Unique identifier for this Telegram configuration
+    telegram_api_key: ${TELEGRAM_API_KEY}
+    telegram_chat_id: ${TELEGRAM_CHAT_ID}
     telegram_format: "{{data}}"
-    telegram_parsemode: "Markdown" # None/Markdown/MarkdownV2/HTML (https://core.telegram.org/bots/api#formatting-options)
+    telegram_parsemode: "Markdown"      # None/Markdown/MarkdownV2/HTML

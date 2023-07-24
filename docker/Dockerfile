@@ -1,5 +1,9 @@
-# Step 1: Choose the BlackArch Linux base image
+# Step 0: Choose the BlackArch Linux base image
 FROM blackarchlinux/blackarch
+
+# Step 1: Set the environment variables using values from .env file
+ENV TELEGRAM_API_KEY=${TELEGRAM_API_KEY}
+ENV TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
 
 # Step 2: Install required dependencies using Pacman
 RUN pacman -Sy --noconfirm \
