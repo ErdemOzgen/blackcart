@@ -33,11 +33,8 @@ RUN pacman -Sy --noconfirm \
 # Step 3: Set the working directory
 WORKDIR /go/src/app
 
-# Step 4: Copy the Go scripts into the container
-#COPY . .
-#COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
 
-# Step 5: Install the Go scripts
+# Step 4: Install the Go scripts
 RUN go version \
     && go install github.com/tomnomnom/assetfinder@latest \
     && go install github.com/proditis/orunmila@latest \
@@ -50,8 +47,14 @@ RUN go version \
     && go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest \
     && go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 
-# Step 6: Add Go bin to PATH
+# Step 5: Add Go bin to PATH
 RUN echo 'export PATH=$PATH:/root/go/bin' >> ~/.bashrc
+
+# Step 6:
+WORKDIR /work_dir
+# Step 6: Copy the file and folders into the container
+COPY . .
+COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
 
 # Step 7: Define the entry point
 ENTRYPOINT ["bash"]

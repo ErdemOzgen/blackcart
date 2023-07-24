@@ -1,0 +1,6 @@
+telegram:
+  - id: "tel"
+    telegram_api_key: "CHANGE ME"
+    telegram_chat_id: "CHANGE ME"
+    telegram_format: "{{data}}"
+    telegram_parsemode: "Markdown" # None/Markdown/MarkdownV2/HTML (https://core.telegram.org/bots/api#formatting-options)
