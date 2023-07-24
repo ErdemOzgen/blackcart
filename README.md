@@ -10,7 +10,7 @@
           <img src="https://img.shields.io/docker/pulls/erdemozgen/blackcart" /></a>
   </p>
 
-# Continuous Automated Red Teaming
+# Docker Container for Continuous Automated Red Teaming
 
 Continuous automated red teaming (CART) is an advanced cybersecurity approach that incorporates automation and continuous testing into traditional red team exercises. Unlike manual red teaming conducted annually or bi-annually, CART ensures ongoing security testing throughout the year. By continuously testing an organization's cybersecurity defenses, CART aims to detect and address vulnerabilities proactively, preventing attackers from exploiting them. This method provides a more proactive and comprehensive approach to enhancing an organization's security posture. Blackcart is a streamlined Dockerfile that comprises a collection of essential security tools suitable for Continuous Automated Red Teaming (CART).
 
