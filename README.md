@@ -1,13 +1,12 @@
 # blackcart
 Custom Black arch based docker container for continuous automated red teaming
 
-[![Build and Push Docker Image](https://github.com/erdemozgen/blackcart/actions/workflows/build-and-push.yml/badge.svg)](https://github.com/erdemozgen/blackcart/actions/workflows/build-and-push.yml/badge.svg)
+[![Build and Push Docker Image](https://github.com/erdemozgen/blackcart/actions/workflows/build-and-push.yml/badge.svg)](https://github.com/erdemozgen/blackcart/actions/workflows/build-and-push.yml)
 
-<a href="https://github.com/ErdemOzgen/blackcart/actions/workflows/build-and-push.yml" alt="Publish Docker Image">
-          <img src="https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-image.yml/badge.svg" /></a>
-	
-<a href="http://doge.mit-license.org" alt="License">
-          <img src="http://img.shields.io/:license-mit-blue.svg" /></a>
+[![Publish Docker Image](https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-image.yml/badge.svg)](https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-image.yml)
+
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+
 ## Installed Tools
 
 
