@@ -1,11 +1,18 @@
-# blackcart
-Custom Black arch based docker container for continuous automated red teaming
+  <p align="center"><a href="https://github.com/ErdemOzgen/blackcart">Blackcart</a> Continuous Automated Red Teaming Dockerfile</p>
+    <p align="center">
+    <a href="https://github.com/erdemozgen/blackcart/actions/workflows/build-and-push.yaml" alt="Publish Docker Image">
+          <img src="https://img.shields.io/github/actions/workflow/status/erdemozgen/blackcart/build-and-push.yaml" /></a>
+    <a href="http://doge.mit-license.org" alt="License">
+          <img src="http://img.shields.io/:license-mit-blue.svg" /></a>
+    <a href="https://hub.docker.com/r/erdemozgen/blackcart/" alt="Docker image size">
+          <img src="https://img.shields.io/docker/image-size/erdemozgen/blackcart/latest" /></a>
+    <a href="https://hub.docker.com/r/erdemozgen/blackcart/" alt="Docker Pulls">
+          <img src="https://img.shields.io/docker/pulls/erdemozgen/blackcart" /></a>
+  </p>
 
-[![Build and Push Docker Image](https://github.com/erdemozgen/blackcart/actions/workflows/build-and-push.yml/badge.svg)](https://github.com/erdemozgen/blackcart/actions/workflows/build-and-push.yml)
+# Continuous Automated Red Teaming
 
-[![Publish Docker Image](https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-image.yml/badge.svg)](https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-image.yml)
-
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+Continuous automated red teaming (CART) is an advanced cybersecurity approach that incorporates automation and continuous testing into traditional red team exercises. Unlike manual red teaming conducted annually or bi-annually, CART ensures ongoing security testing throughout the year. By continuously testing an organization's cybersecurity defenses, CART aims to detect and address vulnerabilities proactively, preventing attackers from exploiting them. This method provides a more proactive and comprehensive approach to enhancing an organization's security posture. Blackcart is a streamlined Dockerfile that comprises a collection of essential security tools suitable for Continuous Automated Red Teaming (CART).
 
 ## Installed Tools
 
