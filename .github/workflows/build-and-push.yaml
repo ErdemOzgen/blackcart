@@ -29,5 +29,5 @@ jobs:
           DOCKER_BUILDKIT: 1
         run: |
           docker buildx create --use
-          docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/blackcart:latest -f docker/Dockerfile --push .
+          docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/blackcart:latest  --push .
 

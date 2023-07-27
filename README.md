@@ -61,8 +61,8 @@ Continuous automated red teaming (CART) is an advanced cybersecurity approach th
 
 ```bash
 # Change telegram configs in .env.example
-mv docker/.env.example docker/.env
-docker build -t blackcart -f docker/Dockerfile
+mv .env.example .env
+docker build -t blackcart .
 docker run -it blackcart
 docker run -it --env-file .env blackcart
 
