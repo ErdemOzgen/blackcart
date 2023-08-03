@@ -61,4 +61,4 @@ COPY . .
 COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
 
 # Step 7: Define the entry point
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["/bin/sh"]
