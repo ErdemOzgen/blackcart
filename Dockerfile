@@ -33,7 +33,9 @@ RUN pacman -Sy --noconfirm \
     ssrfmap \
     corscanner \
     crlfuzz \
-    sqlmap 
+    sqlmap \
+    wget \
+    net-tools
 
 
 
