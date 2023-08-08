@@ -35,14 +35,11 @@ RUN pacman -Sy --noconfirm \
     crlfuzz \
     sqlmap \
     wget \
-    net-tools 
-
-
-
+    net-tools \
+    # Add any other necessary dependencies here
 
 # Step 3: Set the working directory
 WORKDIR /go/src/app
-
 
 # Step 4: Install the Go scripts
 RUN go version \
@@ -60,11 +57,21 @@ RUN go version \
 # Step 5: Add Go bin to PATH
 RUN echo 'export PATH=$PATH:/root/go/bin' >> ~/.bashrc
 
-# Step 6:
+# Step 6: Set the working directory
 WORKDIR /work_dir
-# Step 6: Copy the file and folders into the container
+
+# Step 7: Copy the file and folders into the container
 COPY . .
 COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
 
-# Step 7: Define the entry point
+# Step 8: Install Anaconda Python
+RUN wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh && \
+    chmod +x Anaconda3-2021.05-Linux-x86_64.sh && \
+    ./Anaconda3-2021.05-Linux-x86_64.sh -b -p /opt/anaconda3 && \
+    rm Anaconda3-2021.05-Linux-x86_64.sh
+
+# Step 9: Add Anaconda to PATH
+ENV PATH="/opt/anaconda3/bin:${PATH}"
+
+# Step 10: Define the entry point
 ENTRYPOINT ["/bin/sh"]
