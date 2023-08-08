@@ -58,7 +58,7 @@ Continuous automated red teaming (CART) is an advanced cybersecurity approach th
 | sqlmap           | An open source penetration testing tool that automates the process of finding and exploiting SQL injection vulnerabilities.              |
 | wget           | A free software command-line tool for downloading files from the web.              |
 | net-tools           | A collection of networking tools for Linux and Unix systems.              |
-| openvas-scanner	           | A vulnerability scanner that can be used to scan networks for security vulnerabilities.              |
+
 
 ## How to build and run ?
 
