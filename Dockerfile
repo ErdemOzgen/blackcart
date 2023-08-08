@@ -79,6 +79,8 @@ EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
 
 # Step 12: Set the entry point to /bin/bash
-RUN chmod +x ./entrypoint.sh
-ENTRYPOINT ["./entrypoint.sh"]
+RUN source ~/.bashrc
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
