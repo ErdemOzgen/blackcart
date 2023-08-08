@@ -32,7 +32,11 @@ RUN pacman -Sy --noconfirm \
     ssrf-sheriff \
     ssrfmap \
     corscanner \
-    crlfuzz
+    crlfuzz \
+    sqlmap 
+
+
+
 
 # Step 3: Set the working directory
 WORKDIR /go/src/app
