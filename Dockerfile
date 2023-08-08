@@ -73,11 +73,12 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh && 
 # Step 9: Add Anaconda to PATH
 RUN echo 'export PATH=$PATH:/opt/anaconda3/bin' >> ~/.bashrc
 # Step 10: Expose port 22 for SSH communication
-#EXPOSE 22
+EXPOSE 22
 
 # Step 11: Start the SSH server on container start
-#CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/usr/sbin/sshd", "-D"]
 
 # Step 12: Set the entry point to /bin/bash
-ENTRYPOINT ["/bin/bash"]
+RUN chmod +x ./entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]
 
