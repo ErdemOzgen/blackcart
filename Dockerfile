@@ -35,8 +35,8 @@ RUN pacman -Sy --noconfirm \
     crlfuzz \
     sqlmap \
     wget \
-    net-tools 
-    # Add any other necessary dependencies here
+    net-tools \
+    openssh  # Install OpenSSH for SSH server
 
 # Step 3: Set the working directory
 WORKDIR /go/src/app
@@ -73,5 +73,8 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh && 
 # Step 9: Add Anaconda to PATH
 ENV PATH="/opt/anaconda3/bin:${PATH}"
 
-# Step 10: Define the entry point
-ENTRYPOINT ["/bin/sh"]
+# Step 10: Expose port 22 for SSH communication
+EXPOSE 22
+
+# Step 11: Start the SSH server on container start
+CMD ["/usr/sbin/sshd", "-D"]
