@@ -35,7 +35,7 @@ RUN pacman -Sy --noconfirm \
     crlfuzz \
     sqlmap \
     wget \
-    net-tools \
+    net-tools 
     # Add any other necessary dependencies here
 
 # Step 3: Set the working directory
