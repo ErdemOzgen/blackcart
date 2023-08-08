@@ -35,7 +35,8 @@ RUN pacman -Sy --noconfirm \
     crlfuzz \
     sqlmap \
     wget \
-    net-tools
+    net-tools \
+    openvas-scanner
 
 
 
