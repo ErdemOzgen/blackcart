@@ -78,3 +78,7 @@ EXPOSE 22
 
 # Step 11: Start the SSH server on container start
 CMD ["/usr/sbin/sshd", "-D"]
+
+# Step 12: Set the entry point to /bin/bash
+ENTRYPOINT ["/bin/bash"]
+
