@@ -79,6 +79,7 @@ EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
 
 # Step 12: Set the entry point to /bin/bash
+RUN echo 'export PATH="/root/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:/root/go/bin:/opt/anaconda3/bin:$PATH"' >> ~/.bashrc
 RUN source ~/.bashrc
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
