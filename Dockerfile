@@ -63,22 +63,23 @@ WORKDIR /work_dir
 COPY . .
 COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
 
-# Step 8: Install Anaconda Python for the runtime stage
-RUN wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh && \
-    chmod +x Anaconda3-2021.05-Linux-x86_64.sh && \
-    ./Anaconda3-2021.05-Linux-x86_64.sh -b -p /opt/anaconda3 && \
-    rm Anaconda3-2021.05-Linux-x86_64.sh
+# Step 8: Install Miniconda for the runtime stage
 # Use a separate stage for runtime to keep the final image smaller
 FROM blackarchlinux/blackarch AS runtime
 
-# Copy the Anaconda installation from the build stage
-COPY --from=build /opt/anaconda3 /opt/anaconda3
+# Copy the Miniconda installation from the build stage
+COPY --from=build /opt/miniconda3 /opt/miniconda3
+# Copy all binaries from the builder image to the runtime image
+COPY --from=build /root/go/bin /root/go/bin
+COPY --from=build /usr/local/bin /usr/local/bin
+COPY --from=build /usr/local/sbin /usr/local/sbin
+COPY --from=build /go/src/app /go/src/app
 
-# Set the PATH for Anaconda
-RUN echo 'export PATH=$PATH:/opt/anaconda3/bin' >> ~/.bashrc
+# Set the PATH for Miniconda
+RUN echo 'export PATH=$PATH:/opt/miniconda3/bin' >> ~/.bashrc
 
 # Set the entry point to /bin/bash
-RUN echo 'export PATH="/root/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:/root/go/bin:/opt/anaconda3/bin:$PATH"' >> ~/.bashrc
+RUN echo 'export PATH="/root/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:/root/go/bin:/opt/miniconda3/bin:$PATH"' >> ~/.bashrc
 RUN source ~/.bashrc
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
