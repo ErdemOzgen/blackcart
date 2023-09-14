@@ -63,18 +63,16 @@ WORKDIR /work_dir
 COPY . .
 COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
 
-# Step 8: Install Miniconda for the runtime stage
-# Step 8: Install Miniconda for the runtime stage
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh && \
-    chmod +x miniconda.sh && \
-    ./miniconda.sh -b -p /opt/miniconda3 && \
-    rm miniconda.sh
+RUN wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh && \
+    chmod +x Anaconda3-2021.05-Linux-x86_64.sh && \
+    ./Anaconda3-2021.05-Linux-x86_64.sh -b -p /opt/anaconda3 && \
+    rm Anaconda3-2021.05-Linux-x86_64.sh
 
 # Use a separate stage for runtime to keep the final image smaller
 FROM blackarchlinux/blackarch AS runtime
 
-# Copy the Miniconda installation from the build stage
-COPY --from=build /opt/miniconda3 /opt/miniconda3
+# Copy the Anaconda installation from the build stage
+COPY --from=build /opt/anaconda3 /opt/anaconda3
 # Copy all binaries from the builder image to the runtime image
 COPY --from=build /root/go/bin /root/go/bin
 COPY --from=build /usr/local/bin /usr/local/bin
