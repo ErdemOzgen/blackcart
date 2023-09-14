@@ -77,6 +77,8 @@ COPY --from=build /opt/anaconda3 /opt/anaconda3
 COPY --from=build /root/go/bin /root/go/bin
 COPY --from=build /usr/local/bin /usr/local/bin
 COPY --from=build /usr/local/sbin /usr/local/sbin
+COPY --from=build /usr/bin /usr/bin
+COPY --from=build /usr/sbin /usr/sbin
 COPY --from=build /go/src/app /go/src/app
 
 # Set the PATH for Miniconda
