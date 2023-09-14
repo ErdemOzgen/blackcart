@@ -80,10 +80,10 @@ COPY --from=build /usr/local/sbin /usr/local/sbin
 COPY --from=build /go/src/app /go/src/app
 
 # Set the PATH for Miniconda
-RUN echo 'export PATH=$PATH:/opt/miniconda3/bin' >> ~/.bashrc
+RUN echo 'export PATH=$PATH:/opt/anaconda3/bin' >> ~/.bashrc
 
 # Set the entry point to /bin/bash
-RUN echo 'export PATH="/root/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:/root/go/bin:/opt/miniconda3/bin:$PATH"' >> ~/.bashrc
+RUN echo 'export PATH="/root/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:/root/go/bin:/opt/anaconda3/bin:$PATH"' >> ~/.bashrc
 RUN source ~/.bashrc
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
