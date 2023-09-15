@@ -73,7 +73,7 @@ FROM blackarchlinux/blackarch AS runtime
 
 # Copy the Anaconda installation from the build stage
 #COPY --from=build /opt/anaconda3 /opt/anaconda3
-Copy all binaries from the builder image to the runtime image
+#Copy all binaries from the builder image to the runtime image
 COPY --from=build /root/go/bin /root/go/bin
 COPY --from=build /usr/local/bin /usr/local/bin
 COPY --from=build /usr/local/sbin /usr/local/sbin
