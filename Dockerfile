@@ -63,10 +63,10 @@ WORKDIR /work_dir
 COPY . .
 COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
 
-RUN wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh && \
-    chmod +x Anaconda3-2021.05-Linux-x86_64.sh && \
-    ./Anaconda3-2021.05-Linux-x86_64.sh -b -p /opt/anaconda3 && \
-    rm Anaconda3-2021.05-Linux-x86_64.sh
+# RUN wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh && \
+#     chmod +x Anaconda3-2021.05-Linux-x86_64.sh && \
+#     ./Anaconda3-2021.05-Linux-x86_64.sh -b -p /opt/anaconda3 && \
+#     rm Anaconda3-2021.05-Linux-x86_64.sh
 
 # Use a separate stage for runtime to keep the final image smaller
 FROM blackarchlinux/blackarch AS runtime
@@ -85,10 +85,12 @@ COPY --from=build /lib /lib
 COPY --from=build /lib64 /lib64
 #COPY --from=build /opt /opt
 # Set the PATH for Miniconda
-RUN echo 'export PATH=$PATH:/opt/anaconda3/bin' >> ~/.bashrc
+#RUN echo 'export PATH=$PATH:/opt/anaconda3/bin' >> ~/.bashrc
 
 # Set the entry point to /bin/bash
 RUN echo 'export PATH="/root/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:/root/go/bin:/opt/anaconda3/bin:$PATH"' >> ~/.bashrc
+RUN python -m venv blackcartenv
+RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
 RUN source ~/.bashrc
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
