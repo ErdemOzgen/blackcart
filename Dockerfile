@@ -90,6 +90,9 @@ COPY --from=build / /
 # Set the PATH for Miniconda
 #RUN echo 'export PATH=$PATH:/opt/anaconda3/bin' >> ~/.bashrc
 
+RUN pacman -Sy --noconfirm --overwrite '*' jre11-openjdk
+RUN pacman -Sy --noconfirm --overwrite '*' jdk11-openjdk
+
 # Set the entry point to /bin/bash
 RUN echo 'export PATH="/root/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:/root/go/bin:/opt/anaconda3/bin:$PATH"' >> ~/.bashrc
 RUN python -m venv blackcartenv
