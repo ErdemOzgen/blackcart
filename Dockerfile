@@ -73,18 +73,18 @@ FROM blackarchlinux/blackarch AS runtime
 
 # Copy the Anaconda installation from the build stage
 #COPY --from=build /opt/anaconda3 /opt/anaconda3
-# Copy all binaries from the builder image to the runtime image
-# COPY --from=build /root/go/bin /root/go/bin
-# COPY --from=build /usr/local/bin /usr/local/bin
-# COPY --from=build /usr/local/sbin /usr/local/sbin
-# COPY --from=build /usr/bin /usr/bin
-# COPY --from=build /usr/sbin /usr/sbin
-# COPY --from=build /go/src/app /go/src/app
-# COPY --from=build /usr /usr
-# COPY --from=build /lib /lib
-# COPY --from=build /lib64 /lib64
-# COPY --from=build /opt /opt
-COPY --from=build / /
+Copy all binaries from the builder image to the runtime image
+COPY --from=build /root/go/bin /root/go/bin
+COPY --from=build /usr/local/bin /usr/local/bin
+COPY --from=build /usr/local/sbin /usr/local/sbin
+COPY --from=build /usr/bin /usr/bin
+COPY --from=build /usr/sbin /usr/sbin
+COPY --from=build /go/src/app /go/src/app
+COPY --from=build /usr /usr
+COPY --from=build /lib /lib
+COPY --from=build /lib64 /lib64
+COPY --from=build /opt /opt
+#COPY --from=build / /
 
 
 # Set the PATH for Miniconda
