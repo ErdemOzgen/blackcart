@@ -23,7 +23,6 @@ RUN pacman -Sy --noconfirm \
     httprobe \
     masscan \
     hosthunter \
-    zaproxy \
     gobuster \
     dirsearch \
     hydra \
@@ -36,6 +35,7 @@ RUN pacman -Sy --noconfirm \
     sqlmap \
     wget \
     net-tools
+
 
 # Step 3: Set the working directory
 WORKDIR /go/src/app
@@ -83,7 +83,10 @@ COPY --from=build /go/src/app /go/src/app
 COPY --from=build /usr /usr
 COPY --from=build /lib /lib
 COPY --from=build /lib64 /lib64
-#COPY --from=build /opt /opt
+COPY --from=build /opt /opt
+#COPY --from=build / /
+
+
 # Set the PATH for Miniconda
 #RUN echo 'export PATH=$PATH:/opt/anaconda3/bin' >> ~/.bashrc
 
