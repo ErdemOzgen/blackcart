@@ -35,7 +35,8 @@ RUN pacman -Sy --noconfirm \
     sqlmap \
     wget \
     net-tools \
-    jq
+    jq \
+    aws-cli
 
 
 # Step 3: Set the working directory
