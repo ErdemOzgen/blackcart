@@ -36,7 +36,10 @@ RUN pacman -Sy --noconfirm \
     wget \
     net-tools \
     jq \
-    aws-cli
+    aws-cli \
+    wfuzz \
+    arjun \
+
 
 
 # Step 3: Set the working directory
@@ -94,7 +97,8 @@ COPY --from=build /opt /opt
 
 RUN pacman -Sy --noconfirm --overwrite '*' jre11-openjdk
 RUN pacman -Sy --noconfirm --overwrite '*' jdk11-openjdk
-
+# Add smuggler
+RUN git clone https://github.com/defparam/smuggler.git
 # Set the entry point to /bin/bash
 RUN echo 'export PATH="/root/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:/root/go/bin:/opt/anaconda3/bin:$PATH"' >> ~/.bashrc
 RUN python -m venv blackcartenv
