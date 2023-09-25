@@ -39,6 +39,7 @@ RUN pacman -Sy --noconfirm \
     aws-cli \
     wfuzz \
     arjun \
+    theharvester
 
 
 
