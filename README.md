@@ -17,47 +17,54 @@ Continuous automated red teaming (CART) is an advanced cybersecurity approach th
 ## Installed Tools
 
 
-| Tool            | Description                                       |
-| --------------- | ------------------------------------------------- |
-| git             | Distributed version control system               |
-| python          | General-purpose programming language             |
-| python-pip      | Package installer for Python packages            |
-| go              | Programming language for system-level development|
-| nmap            | Network exploration and security auditing tool   |
-| rustscan        | Fast network scanner                              |
-| zmap            | Network scanner for Internet-wide surveys        |
-| amass           | In-depth subdomain enumeration tool              |
-| gau             | Fetch URLs from Google web search                |
-| traceroute      | Traceroute networking utility                     |
-| sslscan         | SSL/TLS vulnerability scanner                     |
-| massdns         | High-performance DNS server                       |
-| altdns          | Subdomain permutation generation tool            |
-| httprobe        | Take a list of domains and probe HTTP/HTTPS      |
-| masscan         | Fast TCP port scanner                             |
-| hosthunter      | OSINT tool for discovering hostnames             |
-| zaproxy         | Web application security scanner (OWASP ZAP)     |
-| gobuster        | Directory/file and DNS busting tool              |
-| dirsearch       | Web path scanner and brute-forcer                |
-| hydra           | Password-cracking tool                            |
-| gospider        | Web spidering and intelligent scraping tool      |
-| xsstrike        | Advanced XSS detection suite                      |
-| ssrf-sheriff    | Server-Side Request Forgery (SSRF) detection tool|
-| ssrfmap         | Automatic SSRF fuzzer and exploitation tool      |
-| corscanner      | Cross-Origin Resource Sharing (CORS) scanner     |
-| crlfuzz         | Carriage Return Line Feed (CRLF) injection tool  |
-| assetfinder     | Subdomain enumeration tool                        |
-| orunmila        | Security testing and reconnaissance tool         |
-| cspparse        | CSP (Content Security Policy) parser             |
-| certnames       | Extract SSL/TLS certificate names from a list    |
-| sniprobe        | Probe endpoints to check for server side request forgery vulnerability|
-| harx            | Extract and manipulate HTTP Archive (HAR) files  |
-| subfinder       | Subdomain discovery tool                          |
-| notify          | Cloud-native notification service                |
-| nuclei          | Powerful vulnerability scanner for dynamic application security testing (DAST)|
-| httpx           | Fast and multi-purpose HTTP toolkit              |
-| sqlmap           | An open source penetration testing tool that automates the process of finding and exploiting SQL injection vulnerabilities.              |
-| wget           | A free software command-line tool for downloading files from the web.              |
-| net-tools           | A collection of networking tools for Linux and Unix systems.              |
+| Name               | Description                                  |
+| ------------------ | -------------------------------------------- |
+| git                | Version control system                       |
+| python             | Programming language                         |
+| python-pip         | Python package manager                       |
+| go                 | Programming language                         |
+| nmap               | Network exploration tool                     |
+| rustscan           | Fast port scanner                            |
+| zmap               | Network scanner for open ports               |
+| amass              | Subdomain enumeration tool                   |
+| gau                | Fetch known URLs from AlienVault's OTX      |
+| traceroute         | Network diagnostic tool                      |
+| sslscan            | SSL/TLS security testing tool                |
+| massdns            | DNS resolver and list generator              |
+| altdns             | Subdomain permutation tool                   |
+| httprobe           | HTTP/HTTPS probe                             |
+| masscan            | Fast port scanner                            |
+| hosthunter         | Subdomain discovery tool                     |
+| gobuster           | Directory/file brute-forcing tool            |
+| dirsearch          | Web path scanner                             |
+| hydra              | Password cracking tool                       |
+| gospider           | Web spider and crawler                       |
+| xsstrike           | XSS scanner                                  |
+| ssrf-sheriff       | Server-Side Request Forgery (SSRF) scanner   |
+| ssrfmap            | Server-Side Request Forgery (SSRF) scanner   |
+| corscanner         | CORS misconfiguration scanner                |
+| crlfuzz            | CRLF injection vulnerability scanner         |
+| sqlmap             | SQL injection scanner                        |
+| wget               | Network utility to retrieve files            |
+| net-tools          | Network configuration tools                  |
+| jq                 | Command-line JSON processor                  |
+| aws-cli            | AWS Command Line Interface                   |
+| wfuzz              | Web application brute-forcing tool           |
+| arjun              | Parameter-based request tool                 |
+| theharvester       | Information gathering tool                   |
+| assetfinder        | Subdomain finder tool                        |
+| orunmila           | DNS brute-forcing tool                       |
+| cspparse           | Content Security Policy (CSP) parser         |
+| certnames          | Extract SSL/TLS certificate names            |
+| sniprobe           | Subdomain enumeration tool                   |
+| harx               | HTTP Archive (HAR) file extractor            |
+| subfinder          | Subdomain discovery tool                     |
+| notify             | Notification service for security findings   |
+| nuclei             | Fast and customizable vulnerability scanner  |
+| httpx              | Fast and multi-purpose HTTP scanner         |
+| jre11-openjdk      | Java Runtime Environment 11                  |
+| jdk11-openjdk      | Java Development Kit 11                      |
+
 
 
 ## How to build and run ?
