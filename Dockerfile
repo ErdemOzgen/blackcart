@@ -8,7 +8,6 @@ ENV TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
 # Step 2: Install required dependencies using Pacman
 RUN pacman -Sy --noconfirm \
     base-devel \
-    glibc \
     git \
     python \
     python-pip \
@@ -46,9 +45,7 @@ RUN pacman -Sy --noconfirm \
     pcre \
     pkg-config \
     gitleaks \
-    wapiti \
-    python-shodan \
-    python-censys
+    wapiti
 
 
 
@@ -87,6 +84,9 @@ COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
 #     ./Anaconda3-2021.05-Linux-x86_64.sh -b -p /opt/anaconda3 && \
 #     rm Anaconda3-2021.05-Linux-x86_64.sh
 
+# Use a separate stage for runtime to keep the final image smaller
+FROM blackarchlinux/blackarch AS runtime
+
 # Copy the Anaconda installation from the build stage
 #COPY --from=build /opt/anaconda3 /opt/anaconda3
 #Copy all binaries from the builder image to the runtime image
@@ -108,6 +108,8 @@ COPY --from=build /opt /opt
 
 RUN pacman -Sy --noconfirm --overwrite '*' jre11-openjdk
 RUN pacman -Sy --noconfirm --overwrite '*' jdk11-openjdk
+RUN pacman -Sy --noconfirm --overwrite '*' python-shodan
+RUN pacman -Sy --noconfirm --overwrite '*' python-censys
 WORKDIR /work_dir
 # Add smuggler
 RUN git clone https://github.com/defparam/smuggler.git
@@ -117,7 +119,6 @@ RUN echo 'export PATH="/root/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/lo
 RUN python -m venv blackcartenv
 RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
 RUN source ~/.bashrc
-
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
