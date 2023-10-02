@@ -118,6 +118,9 @@ RUN source ~/.bashrc
 RUN pip install --upgrade pip
 RUN pip install shodan
 RUN pip install censys
+# Murmur
+RUN git clone https://github.com/Viralmaniar/MurMurHash.git
+RUN pip install -r requirements.txt
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
