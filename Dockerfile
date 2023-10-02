@@ -63,7 +63,7 @@ RUN go version \
     && go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest \
     && go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest \
     && go install -v github.com/ffuf/ffuf/v2@latest \
-    && go install -v github.com/0xTeles/jsleak/v2/jsleak
+    && go install github.com/0xTeles/jsleak/v2/jsleak@latest
 
 # Step 5: Add Go bin to PATH
 RUN echo 'export PATH=$PATH:/root/go/bin' >> ~/.bashrc
