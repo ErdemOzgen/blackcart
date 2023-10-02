@@ -54,6 +54,7 @@ Incorporating Blackcart into your DevSecOps pipelines enhances your organization
 | python-pip         | Python package manager                       |
 | go                 | Programming language                         |
 | nmap               | Network exploration tool                     |
+| nuclei             | Fast and customizable vulnerability scanner  |
 | rustscan           | Fast port scanner                            |
 | zmap               | Network scanner for open ports               |
 | amass              | Subdomain enumeration tool                   |
@@ -90,10 +91,21 @@ Incorporating Blackcart into your DevSecOps pipelines enhances your organization
 | harx               | HTTP Archive (HAR) file extractor            |
 | subfinder          | Subdomain discovery tool                     |
 | notify             | Notification service for security findings   |
-| nuclei             | Fast and customizable vulnerability scanner  |
 | httpx              | Fast and multi-purpose HTTP scanner         |
 | jre11-openjdk      | Java Runtime Environment 11                  |
 | jdk11-openjdk      | Java Development Kit 11                      |
+| Shodan             | Internet-wide network scanning tool           |
+| Censys             | Internet-wide network scanning tool           |
+| Google Dork        | Google search query tool                     |
+| Gitleaks           | Tool for finding sensitive information in Git repositories |
+| Favicon            | Extracts favicon URLs from websites crosssearch with shodan          |
+| WaybackURLs        | Tool to discover archived web pages          |
+| XSS Striker        | XSS scanner                                  |
+| IIS Shortname Scanner | Scanner for IIS short filename disclosure |
+| JSLeak             | JavaScript link finder tool                  |
+| Smuggler           | HTTP request smuggling scanner               |
+| [WebAnalyzer](https://github.com/ErdemOzgen/WAP_API)        | Website analysis tool                        |
+
 
 
 

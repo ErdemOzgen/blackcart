@@ -115,7 +115,7 @@ RUN python -m venv blackcartenv
 RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
 RUN source ~/.bashrc
 # Install Shodan Api
-RUN pip install --upgrade pip
+#RUN pip install --upgrade pip
 RUN pip install shodan
 RUN pip install censys
 # Murmur
