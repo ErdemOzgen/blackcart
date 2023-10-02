@@ -40,7 +40,10 @@ RUN pacman -Sy --noconfirm \
     wfuzz \
     arjun \
     theharvester \
-    dirb
+    dirb \
+    pcre \
+    pkg-config \
+    gitleaks
 
 
 
@@ -58,7 +61,9 @@ RUN go version \
     && go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest \
     && go install -v github.com/projectdiscovery/notify/cmd/notify@latest \
     && go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest \
-    && go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+    && go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest \
+    && go install -v github.com/ffuf/ffuf/v2@latest \
+    && go install -v github.com/0xTeles/jsleak/v2/jsleak
 
 # Step 5: Add Go bin to PATH
 RUN echo 'export PATH=$PATH:/root/go/bin' >> ~/.bashrc
@@ -99,13 +104,19 @@ COPY --from=build /opt /opt
 
 RUN pacman -Sy --noconfirm --overwrite '*' jre11-openjdk
 RUN pacman -Sy --noconfirm --overwrite '*' jdk11-openjdk
+WORKDIR /work_dir
 # Add smuggler
 RUN git clone https://github.com/defparam/smuggler.git
+# For WebAnalyzer pull this docker and run as API endpoint ==> docker pull erdemozgen/wap_api
 # Set the entry point to /bin/bash
 RUN echo 'export PATH="/root/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:/root/go/bin:/opt/anaconda3/bin:$PATH"' >> ~/.bashrc
 RUN python -m venv blackcartenv
 RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
 RUN source ~/.bashrc
+# Install Shodan Api
+RUN pip install --upgrade pip
+RUN pip install shodan
+RUN pip install censys
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
