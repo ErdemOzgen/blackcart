@@ -46,7 +46,9 @@ RUN pacman -Sy --noconfirm \
     pcre \
     pkg-config \
     gitleaks \
-    wapiti
+    wapiti \
+    python-shodan \
+    python-censys
 
 
 
@@ -85,9 +87,6 @@ COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
 #     ./Anaconda3-2021.05-Linux-x86_64.sh -b -p /opt/anaconda3 && \
 #     rm Anaconda3-2021.05-Linux-x86_64.sh
 
-# Use a separate stage for runtime to keep the final image smaller
-FROM blackarchlinux/blackarch AS runtime
-
 # Copy the Anaconda installation from the build stage
 #COPY --from=build /opt/anaconda3 /opt/anaconda3
 #Copy all binaries from the builder image to the runtime image
@@ -118,13 +117,7 @@ RUN echo 'export PATH="/root/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/lo
 RUN python -m venv blackcartenv
 RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
 RUN source ~/.bashrc
-# Install Shodan Api
-#RUN pip install --upgrade pip
-#RUN pip install shodan
-#RUN pip install censys
-# # Murmur
-# RUN git clone https://github.com/Viralmaniar/MurMurHash.git
-# RUN pip install -r requirements.txt
+
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
