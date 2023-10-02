@@ -7,6 +7,7 @@ ENV TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
 
 # Step 2: Install required dependencies using Pacman
 RUN pacman -Sy --noconfirm \
+    base-devel \
     git \
     python \
     python-pip \
@@ -43,7 +44,8 @@ RUN pacman -Sy --noconfirm \
     dirb \
     pcre \
     pkg-config \
-    gitleaks
+    gitleaks \
+    wapiti
 
 
 
@@ -117,11 +119,11 @@ RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
 RUN source ~/.bashrc
 # Install Shodan Api
 #RUN pip install --upgrade pip
-RUN pip install shodan
-RUN pip install censys
-# Murmur
-RUN git clone https://github.com/Viralmaniar/MurMurHash.git
-RUN pip install -r requirements.txt
+# RUN pip install shodan
+# RUN pip install censys
+# # Murmur
+# RUN git clone https://github.com/Viralmaniar/MurMurHash.git
+# RUN pip install -r requirements.txt
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

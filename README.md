@@ -105,6 +105,7 @@ Incorporating Blackcart into your DevSecOps pipelines enhances your organization
 | JSLeak             | JavaScript link finder tool                  |
 | Smuggler           | HTTP request smuggling scanner               |
 | [WebAnalyzer](https://github.com/ErdemOzgen/WAP_API)        | Website analysis tool                        |
+| wapiti             | Comprehensive web app vulnerability scanner written in Python |
 
 
 
