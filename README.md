@@ -96,7 +96,7 @@ Incorporating Blackcart into your DevSecOps pipelines enhances your organization
 | jdk11-openjdk      | Java Development Kit 11                      |
 | Shodan             | Internet-wide network scanning tool           |
 | Censys             | Internet-wide network scanning tool           |
-| Google Dork        | Google search query tool                     |
+| Go-dork       | he fastest dork scanner written in Go. including Google, Shodan, Bing, Duck, Yahoo and Ask.                     |
 | Gitleaks           | Tool for finding sensitive information in Git repositories |
 | Favicon            | Extracts favicon URLs from websites crosssearch with shodan          |
 | WaybackURLs        | Tool to discover archived web pages          |
