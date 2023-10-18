@@ -8,6 +8,7 @@
           <img src="https://img.shields.io/docker/image-size/erdemozgen/blackcart/latest" /></a>
     <a href="https://hub.docker.com/r/erdemozgen/blackcart/" alt="Docker Pulls">
           <img src="https://img.shields.io/docker/pulls/erdemozgen/blackcart" /></a>
+    <a href="https://www.codefactor.io/repository/github/erdemozgen/blackcart/overview/main"><img src="https://www.codefactor.io/repository/github/erdemozgen/blackcart/badge/main" alt="CodeFactor" /></a>
   </p>
 
 # Docker Container for Continuous Automated Red Teaming and DevSecOps Pipelines
