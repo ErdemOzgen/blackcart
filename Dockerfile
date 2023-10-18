@@ -1,5 +1,5 @@
 # Step 0: Choose the BlackArch Linux base image for the build stage
-FROM blackarchlinux/blackarch AS build
+FROM blackarchlinux/blackarch:latest AS build
 
 # Step 1: Set the environment variables using values from .env file
 ENV TELEGRAM_API_KEY=${TELEGRAM_API_KEY}
@@ -88,7 +88,7 @@ COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
 #     rm Anaconda3-2021.05-Linux-x86_64.sh
 
 # Use a separate stage for runtime to keep the final image smaller
-FROM blackarchlinux/blackarch AS runtime
+FROM blackarchlinux/blackarch:latest AS runtime
 
 # Copy the Anaconda installation from the build stage
 #COPY --from=build /opt/anaconda3 /opt/anaconda3
