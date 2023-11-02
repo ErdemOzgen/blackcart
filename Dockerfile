@@ -118,7 +118,7 @@ WORKDIR /work_dir
 RUN git clone https://github.com/defparam/smuggler.git
 # For WebAnalyzer pull this docker and run as API endpoint ==> docker pull erdemozgen/wap_api
 # Set the entry point to /bin/bash
-RUN echo 'export PATH="/root/go/bin:/sbin:/usr/bin:/root/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:/opt/anaconda3/bin:$PATH"' >> ~/.bashrc
+RUN echo 'export PATH="/root/go/bin:/sbin:/usr/bin:/root/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:$PATH"' >> ~/.bashrc
 RUN python -m venv blackcartenv
 RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
 RUN source ~/.bashrc
