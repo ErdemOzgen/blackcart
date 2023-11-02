@@ -119,7 +119,8 @@ mv .env.example .env
 docker buildx build -t blackcart .
 docker run -it blackcart
 docker run -it --env-file .env blackcart
-
+# Set timezone for logging
+docker run -it -e TZ=Europe/Istanbul erdemozgen/blackcart /bin/bash
 ```
 
 ## Wordlist Location

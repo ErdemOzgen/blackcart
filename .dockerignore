@@ -1,0 +1,40 @@
+# Exclude common version control files and directories
+.git
+.svn
+.hg
+.github
+
+# Exclude temporary or build files
+*.tmp
+*.log
+*.bak
+*.swp
+*.cache
+
+# Exclude development and local environment files
+.env
+node_modules
+npm-debug.log
+
+# Exclude test files and directories
+__tests__
+test
+tests
+
+# Exclude documentation and unnecessary files
+docs
+README.md
+*.md
+Dockerfile
+
+# Exclude editor-specific files and directories
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Exclude OS-specific files and directories
+.DS_Store
+Thumbs.db
+
+# Exclude any other files or directories you want to exclude
