@@ -70,7 +70,8 @@ RUN go version \
     && go install github.com/ffuf/ffuf/v2@latest \
     && go install github.com/tomnomnom/waybackurls@latest \
     && go install github.com/channyein1337/jsleak@latest \
-    && go install github.com/sw33tLie/sns@latest 
+    && go install github.com/sw33tLie/sns@latest  \
+    && go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
 
 # Step 4.1: Install with GO111MODULE=on
 RUN GO111MODULE=on go install dw1.io/go-dork@latest
