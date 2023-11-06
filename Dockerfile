@@ -45,7 +45,8 @@ RUN pacman -Sy --noconfirm \
     pcre \
     pkg-config \
     gitleaks \
-    wapiti
+    wapiti \
+    nano
 
 
 
