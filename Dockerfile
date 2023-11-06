@@ -46,7 +46,9 @@ RUN pacman -Sy --noconfirm \
     pkg-config \
     gitleaks \
     wapiti \
-    nano
+    nano \
+    dalfox \
+    s3scanner
 
 
 

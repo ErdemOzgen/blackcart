@@ -105,8 +105,11 @@ Incorporating Blackcart into your DevSecOps pipelines enhances your organization
 | IIS Shortname Scanner | Scanner for IIS short filename disclosure |
 | JSLeak             | JavaScript link finder tool                  |
 | Smuggler           | HTTP request smuggling scanner               |
-| [WebAnalyzer](https://github.com/ErdemOzgen/WAP_API)        | Website analysis tool                        |
+| [WebAnalyzer](https://github.com/ErdemOzgen/WAP_API)        | Website analysis tool  (Not in blackcart you can use as different docker)  |
 | wapiti             | Comprehensive web app vulnerability scanner written in Python |
+| nano               | GNU nano is a small editor for on the terminal |
+| Dalfox             | Powerful open-source XSS scanner and utility focused on automation |
+| S3scanner          | Scan for misconfigured S3 buckets across S3-compatible APIs |
 
 
 
