@@ -119,7 +119,8 @@ Incorporating Blackcart into your DevSecOps pipelines enhances your organization
 ```bash
 # Change telegram configs in .env.example
 mv .env.example .env
-docker buildx build -t blackcart .
+#docker buildx build -t blackcart .
+docker  build -t blackcart .
 docker run -it blackcart
 docker run -it --env-file .env blackcart
 # Set timezone for logging
