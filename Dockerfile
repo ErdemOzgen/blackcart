@@ -5,9 +5,11 @@ FROM blackarchlinux/blackarch:latest AS build
 ENV TELEGRAM_API_KEY=${TELEGRAM_API_KEY}
 ENV TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
 
-# Step 2: Install required dependencies using Pacman
-RUN pacman -Syy
-RUN pacman -Sy --noconfirm \
+# Step 1: Update the Arch Linux keyring
+RUN pacman -Sy --noconfirm archlinux-keyring
+
+# Step 2: Upgrade the system and install required dependencies using Pacman
+RUN pacman -Syu --noconfirm \
     base-devel \
     git \
     python \
@@ -50,6 +52,7 @@ RUN pacman -Sy --noconfirm \
     nano \
     dalfox \
     s3scanner
+
 
 
 
