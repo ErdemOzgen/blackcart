@@ -9,6 +9,8 @@
     <a href="https://hub.docker.com/r/erdemozgen/blackcart/" alt="Docker Pulls">
           <img src="https://img.shields.io/docker/pulls/erdemozgen/blackcart" /></a>
     <a href="https://www.codefactor.io/repository/github/erdemozgen/blackcart/overview/main"><img src="https://www.codefactor.io/repository/github/erdemozgen/blackcart/badge/main" alt="CodeFactor" /></a>
+    <a>[![Build and Push Docker Image](https://github.com/ErdemOzgen/blackcart/actions/workflows/build-and-push.yaml/badge.svg)](https://github.com/ErdemOzgen/blackcart/actions/workflows/build-and-push.yaml)</a>
+    <a>[![Docker](https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-publish.yml)</a>
   </p>
 
 # Docker Container for Continuous Automated Red Teaming and DevSecOps Pipelines
