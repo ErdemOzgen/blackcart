@@ -6,6 +6,7 @@ ENV TELEGRAM_API_KEY=${TELEGRAM_API_KEY}
 ENV TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
 
 # Step 2: Install required dependencies using Pacman
+RUN pacman -Syy
 RUN pacman -Sy --noconfirm \
     base-devel \
     git \
