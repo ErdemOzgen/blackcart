@@ -5,8 +5,9 @@ FROM blackarchlinux/blackarch:latest AS build
 ENV TELEGRAM_API_KEY=${TELEGRAM_API_KEY}
 ENV TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
 
-# Step 1: Update the Arch Linux keyring
-RUN pacman -Sy --noconfirm archlinux-keyring
+# Step 1: Update the Arch Linux keyring and upgrade the system
+RUN pacman -Sy --noconfirm archlinux-keyring && pacman -Syu --noconfirm
+
 
 # Step 2: Upgrade the system and install required dependencies using Pacman
 RUN pacman -Syu --noconfirm \
