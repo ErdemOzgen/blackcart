@@ -57,7 +57,8 @@ RUN pacman -Syu --noconfirm \
     nano \
     dalfox \
     s3scanner \
-    feroxbuster	
+    feroxbuster \
+    iis-shortname-scanner
 
 
 
