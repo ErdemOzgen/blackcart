@@ -56,7 +56,8 @@ RUN pacman -Syu --noconfirm \
     wapiti \
     nano \
     dalfox \
-    s3scanner
+    s3scanner \
+    feroxbuster	
 
 
 
@@ -118,7 +119,11 @@ COPY --from=build /lib64 /lib64
 COPY --from=build /opt /opt
 #COPY --from=build / /
 
+#  Initialize keyring and populate Arch Linux keyring
+RUN pacman-key --init && pacman-key --populate archlinux
 
+#  Update the Arch Linux keyring and upgrade the system
+#RUN pacman -Sy --noconfirm archlinux-keyring && pacman -Syu --noconfirm
 # Set the PATH for Miniconda
 #RUN echo 'export PATH=$PATH:/opt/anaconda3/bin' >> ~/.bashrc
 
