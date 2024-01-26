@@ -139,6 +139,10 @@ RUN git clone https://github.com/defparam/smuggler.git
 RUN echo 'export PATH="/root/go/bin:/sbin:/usr/bin:/root/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:$PATH"' >> ~/.bashrc
 RUN python -m venv blackcartenv
 RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
+RUN echo "alias install='pacman -S --noconfirm'" >> ~/.bashrc
+RUN echo "alias update='pacman -Syu --noconfirm'" >> ~/.bashrc
+RUN echo "alias remove='pacman -R --noconfirm'" >> ~/.bashrc
+RUN echo "alias search='pacman -Ss'" >> ~/.bashrc
 RUN source ~/.bashrc
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
