@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Start the SSH server if needed
-# /usr/sbin/sshd -D &
+/usr/sbin/sshd -D &
 
-# If arguments were passed to the container, execute them
+# If additional arguments were passed to the container, execute them
 if [ $# -gt 0 ]; then
     # Execute the provided command or script
     exec "$@"

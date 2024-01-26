@@ -140,10 +140,27 @@ RUN git clone https://github.com/defparam/smuggler.git
 RUN echo 'export PATH="/root/go/bin:/sbin:/usr/bin:/root/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:$PATH"' >> ~/.bashrc
 RUN python -m venv blackcartenv
 RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
-RUN echo "alias install='pacman -S --noconfirm'" >> ~/.bashrc
-RUN echo "alias update='pacman -Syu --noconfirm'" >> ~/.bashrc
+RUN echo "alias install='pacman -S --noconfirm --overwrite \"*\"'" >> ~/.bashrc
+RUN echo "alias update='pacman -Syu --noconfirm --overwrite \"*\"'" >> ~/.bashrc
 RUN echo "alias remove='pacman -R --noconfirm'" >> ~/.bashrc
 RUN echo "alias search='pacman -Ss'" >> ~/.bashrc
+RUN source ~/.bashrc
+RUN pacman -Sy --noconfirm --overwrite '*' openssh
+# Generate SSH host keys
+RUN ssh-keygen -A
+
+RUN wget https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linux_amd64.tar.gz -O gotty.tar.gz \
+    && tar -xzf gotty.tar.gz \
+    && mv gotty /usr/local/bin/ \
+    && rm gotty.tar.gz
+
+
+# Generate a self-signed SSL certificate
+RUN openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes -subj '/CN=localhost'
+
+# Move the certificate and key to a specific directory (optional)
+RUN mkdir -p /etc/gotty && mv cert.pem key.pem /etc/gotty/
+RUN mkdir -p /work_dir/data
 RUN source ~/.bashrc
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

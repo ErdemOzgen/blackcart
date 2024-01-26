@@ -36,5 +36,5 @@ Dockerfile
 # Exclude OS-specific files and directories
 .DS_Store
 Thumbs.db
-
+data
 # Exclude any other files or directories you want to exclude
