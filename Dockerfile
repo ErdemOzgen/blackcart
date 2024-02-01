@@ -158,12 +158,10 @@ RUN wget https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linux_amd
 # Generate a self-signed SSL certificate
 RUN openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes -subj '/CN=localhost'
 COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
-RUN pip install PyYAML
-RUN pip install --upgrade pip
 RUN echo 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk' >> ~/.bashrc
 RUN echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 RUN source ~/.bashrc
-COPY ./set_notify.py /usr/local/bin/update_telegram_config
+COPY ./update_telegram_config.sh /usr/local/bin/update_telegram_config
 RUN chmod +x /usr/local/bin/update_telegram_config
 
 # Move the certificate and key to a specific directory (optional)
