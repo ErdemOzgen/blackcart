@@ -169,6 +169,7 @@ RUN mkdir -p /etc/gotty && mv cert.pem key.pem /etc/gotty/
 RUN mkdir -p /work_dir/data
 RUN source ~/.bashrc
 # Set root password
+RUN curl -L https://raw.githubusercontent.com/yohamta/dagu/main/scripts/downloader.sh | bash
 
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

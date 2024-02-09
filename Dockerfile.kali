@@ -26,6 +26,7 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
     jq \
     awscli \
     nano \
+    curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -104,7 +105,7 @@ COPY ./provider-config.yaml /root/.config/notify/provider-config.yaml
 
 # Apply bashrc changes without needing to log out and back in
 RUN . ~/.bashrc
-EXPOSE 22
+EXPOSE 22 8080 8090
 COPY ./update_telegram_config.sh /usr/local/bin/update_telegram_config
 RUN chmod +x /usr/local/bin/update_telegram_config
 RUN echo 'root:blackcart' | chpasswd
@@ -113,7 +114,26 @@ RUN echo 'root:blackcart' | chpasswd
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
     && sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
+ARG USER="dagu"
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
 
+
+
+RUN /bin/bash -c ' \
+    # User and permissions setup \
+    apt-get update && \
+    apt-get install -y sudo tzdata && \
+    rm -rf /var/lib/apt/lists/* && \
+    groupadd -g ${USER_GID} ${USER} && \
+    useradd -m -s /bin/bash -u ${USER_UID} -g ${USER_GID} ${USER} && \
+    echo "${USER} ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/${USER} && \
+    chmod 0440 /etc/sudoers.d/${USER} \
+'
+
+ENV DAGU_HOST=0.0.0.0
+ENV DAGU_PORT=8080
+RUN curl -L https://raw.githubusercontent.com/yohamta/dagu/main/scripts/downloader.sh | bash
 
 # Example for adding entrypoint
 COPY ./entrypoint.sh /entrypoint.sh
