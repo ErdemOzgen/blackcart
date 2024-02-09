@@ -168,6 +168,8 @@ RUN chmod +x /usr/local/bin/update_telegram_config
 RUN mkdir -p /etc/gotty && mv cert.pem key.pem /etc/gotty/
 RUN mkdir -p /work_dir/data
 RUN source ~/.bashrc
+# Set root password
+
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
