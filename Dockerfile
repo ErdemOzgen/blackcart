@@ -11,6 +11,8 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
     git \
     python3 \
     python3-pip \
+    python3.11-venv \
+    zsh \
     golang \
     nmap \
     zmap \
@@ -27,6 +29,16 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
     awscli \
     nano \
     curl \
+    ncat \
+    exploitdb \
+    gobuster \
+    nikto \
+    wpscan \
+    dirb \
+    responder \
+    hping3 \
+    netcat-traditional \
+    metasploit-framework \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -134,6 +146,11 @@ RUN /bin/bash -c ' \
 ENV BLACKDAGGER_HOST=0.0.0.0
 ENV BLACKDAGGER_PORT=8080
 RUN curl -L https://raw.githubusercontent.com/ErdemOzgen/blackdagger/main/scripts/downloader.sh | bash
+RUN python3 -m venv blackcartenv
+RUN echo 'source blackcartenv/bin/activate' >> ~/.zshrc
+RUN source ~/.zshrc
+#RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
+#RUN source ~/.bashrc
 
 # Example for adding entrypoint
 COPY ./entrypoint.sh /entrypoint.sh
