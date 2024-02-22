@@ -34,8 +34,15 @@ jobs:
       id-token: write
 
     steps:
+      - name: Clean up directories
+        run: |
+          sudo rm -rf "/usr/local/share/boost"
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+
       - name: Checkout repository
         uses: actions/checkout@v3
+            # New step: Clean up directories
+
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer

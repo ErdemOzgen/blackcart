@@ -32,7 +32,6 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
     ncat \
     exploitdb \
     gobuster \
-    nikto \
     wpscan \
     dirb \
     responder \
