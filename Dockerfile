@@ -46,7 +46,6 @@ RUN pacman -Syu --noconfirm \
     net-tools \
     jq \
     aws-cli \
-    wfuzz \
     arjun \
     theharvester \
     dirb \
@@ -58,8 +57,15 @@ RUN pacman -Syu --noconfirm \
     dalfox \
     s3scanner \
     feroxbuster \
-    iis-shortname-scanner
-
+    iis-shortname-scanner \
+    nikto \
+    dnswalk \
+    dnsenum \
+    bind \
+    evil-winrm  \
+    socat \
+    chisel \
+    metasploit 
 
 
 
@@ -196,7 +202,7 @@ RUN /bin/bash -c ' \
 
 RUN curl -L https://raw.githubusercontent.com/ErdemOzgen/blackdagger/main/scripts/downloader.sh | bash
 
-EXPOSE 22 8080 8090
+EXPOSE 8080 8090
 
 COPY ./entrypoint.sh /entrypoint.sh
 COPY ./startservices.sh /startservices.sh
