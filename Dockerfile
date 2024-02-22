@@ -150,7 +150,8 @@ RUN python3 -m venv blackcartenv
 #RUN echo 'source blackcartenv/bin/activate' >> ~/.zshrc
 #RUN source ~/.zshrc
 RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
-RUN source ~/.bashrc
+RUN bash -c "source ~/.bashrc"
+
 
 # Example for adding entrypoint
 COPY ./entrypoint.sh /entrypoint.sh
