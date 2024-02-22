@@ -172,32 +172,32 @@ RUN chmod +x /usr/local/bin/update_telegram_config
 
 # Move the certificate and key to a specific directory (optional)
 RUN mkdir -p /etc/gotty && mv cert.pem key.pem /etc/gotty/
-RUN mkdir -p /work_dir/data
+RUN mkdir -p /work_dir/scan_data
 RUN source ~/.bashrc
 
 # Set blackdagger user password
-ARG USER="blackdagger"
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
+# ARG USER="blackdagger"
+# ARG USER_UID=1000
+# ARG USER_GID=$USER_UID
 ENV BLACKDAGGER_HOST=0.0.0.0
 ENV BLACKDAGGER_PORT=8080
 
-RUN /bin/bash -c ' \
-    # Update the system and install sudo, handling file conflicts \
-    pacman -Syu --noconfirm --overwrite "*" && \
-    pacman -S --noconfirm --overwrite "*" sudo && \
-    # Clean the package cache to reduce image size \
-    pacman -Scc --noconfirm && \
-    # User and permissions setup, checking if group/user already exists \
-    if ! getent group ${USER_GID}; then \
-        groupadd -g ${USER_GID} ${USER}; \
-    fi; \
-    if ! id -u ${USER} > /dev/null 2>&1; then \
-        useradd -m -s /bin/bash -u ${USER_UID} -g ${USER_GID} ${USER}; \
-    fi; \
-    echo "${USER} ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/${USER} && \
-    chmod 0440 /etc/sudoers.d/${USER} \
-'
+# RUN /bin/bash -c ' \
+#     # Update the system and install sudo, handling file conflicts \
+#     pacman -Syu --noconfirm --overwrite "*" && \
+#     pacman -S --noconfirm --overwrite "*" sudo && \
+#     # Clean the package cache to reduce image size \
+#     pacman -Scc --noconfirm && \
+#     # User and permissions setup, checking if group/user already exists \
+#     if ! getent group ${USER_GID}; then \
+#         groupadd -g ${USER_GID} ${USER}; \
+#     fi; \
+#     if ! id -u ${USER} > /dev/null 2>&1; then \
+#         useradd -m -s /bin/bash -u ${USER_UID} -g ${USER_GID} ${USER}; \
+#     fi; \
+#     echo "${USER} ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/${USER} && \
+#     chmod 0440 /etc/sudoers.d/${USER} \
+# '
 
 
 RUN curl -L https://raw.githubusercontent.com/ErdemOzgen/blackdagger/main/scripts/downloader.sh | bash
@@ -207,6 +207,8 @@ EXPOSE 8080 8090
 COPY ./entrypoint.sh /entrypoint.sh
 COPY ./startservices.sh /startservices.sh
 COPY update_telegram_config.sh /usr/local/bin/update_telegram_config
-
+RUN mv /work_dir/blackdagger /usr/local/bin/blackdagger
+RUN sh -c 'cp /root/go/bin/* /usr/bin/'
+RUN source ~/.bashrc
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
