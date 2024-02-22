@@ -2,9 +2,11 @@ version: '3.8'
 
 services:
   blackcart:
+    image: blacktest
     build: ./Dockerfile
     ports:
       - "8080:8080"
+      - "8090:8090"
     environment:
       - TELEGRAM_API_KEY=your_telegram_api_key
       - TELEGRAM_CHAT_ID=your_telegram_chat_id
@@ -15,7 +17,8 @@ services:
       - ./data:/work_dir/data  # Mount ./data from the host to /work_dir/data in the container
 
     # Use the following command if you want to enable the web terminal with HTTP and basic auth
-    command: ["sh", "-c", "gotty -w --credential blackcart:blackcart /bin/bash"]
+    #command: ["sh", "-c", "gotty -w --credential blackcart:blackcart /bin/bash"]
+    command: ["sh", "-c", "/startservices.sh"]
     #command: ["sh", "-c", "gotty -w --credential blackcart:blackcart /bin/zsh"]
     # Use the following command if you want to enable TLS with basic auth
     #command: ["sh", "-c", "gotty --tls --tls-crt /etc/gotty/cert.pem --tls-key /etc/gotty/key.pem -w --credential $GOTTY_USERNAME:$GOTTY_PASSWORD /bin/bash"]

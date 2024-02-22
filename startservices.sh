@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Run your other command here
 /work_dir/blackdagger server &
