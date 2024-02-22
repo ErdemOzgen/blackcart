@@ -147,10 +147,10 @@ ENV BLACKDAGGER_HOST=0.0.0.0
 ENV BLACKDAGGER_PORT=8080
 RUN curl -L https://raw.githubusercontent.com/ErdemOzgen/blackdagger/main/scripts/downloader.sh | bash
 RUN python3 -m venv blackcartenv
-RUN echo 'source blackcartenv/bin/activate' >> ~/.zshrc
-RUN source ~/.zshrc
-#RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
-#RUN source ~/.bashrc
+#RUN echo 'source blackcartenv/bin/activate' >> ~/.zshrc
+#RUN source ~/.zshrc
+RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
+RUN source ~/.bashrc
 
 # Example for adding entrypoint
 COPY ./entrypoint.sh /entrypoint.sh
