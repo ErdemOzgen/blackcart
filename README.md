@@ -113,7 +113,7 @@ Incorporating Blackcart into your DevSecOps pipelines enhances your organization
 | nano               | GNU nano is a small editor for on the terminal |
 | Dalfox             | Powerful open-source XSS scanner and utility focused on automation |
 | S3scanner          | Scan for misconfigured S3 buckets across S3-compatible APIs |
-
+| [Blackdagger](https://github.com/ErdemOzgen/blackdagger)        | YAML based automation tool for Contionus Red Teaming DevSecOps and MLSecOps|
 
 
 
