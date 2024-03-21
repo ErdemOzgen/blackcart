@@ -120,36 +120,12 @@ Incorporating Blackcart into your DevSecOps pipelines enhances your organization
 ## How to build and run ?
 
 ```bash
-# Change telegram configs in .env.example
-mv .env.example .env
-#docker buildx build -t blackcart .
-docker  build -t blackcart .
-docker run -it blackcart
-docker run -it --env-file .env blackcart
-# Set timezone for logging
-docker run -it -e TZ=Europe/Istanbul erdemozgen/blackcart /bin/bash
+# In Blackcart repo run this commmands 
+docker compose up 
+# You can access web terminal in http://127.0.0.1:8080
+# Also You can access gotty web terminal http://127.0.0.1:8090
 ```
 
-## Wordlist Location
-
-```bash
-(blackcartenv) [ e0b1194d0dad /usr/share/dirb/wordlists ]# ls -lah /usr/share/dirb/wordlists/
-total 268K
-drwxr-xr-x 5 root root 4.0K Oct 31 10:43 .
-drwxr-xr-x 3 root root 4.0K Oct 31 10:43 ..
--rw-r--r-- 1 root root 180K Jan 24  2012 big.txt
--rw-r--r-- 1 root root 1.3K Jan 27  2012 catala.txt
--rw-r--r-- 1 root root  36K Nov 17  2014 common.txt
--rw-r--r-- 1 root root 1.5K May 23  2012 euskera.txt
--rw-r--r-- 1 root root  142 Dec 29  2005 extensions_common.txt
--rw-r--r-- 1 root root   75 Mar 16  2012 indexes.txt
--rw-r--r-- 1 root root  244 Dec 29  2005 mutations_common.txt
-drwxr-xr-x 2 root root 4.0K Oct 31 10:43 others
--rw-r--r-- 1 root root 6.5K Mar  4  2014 small.txt
--rw-r--r-- 1 root root 3.7K Nov 12  2014 spanish.txt
-drwxr-xr-x 2 root root 4.0K Oct 31 10:43 stress
-drwxr-xr-x 2 root root 4.0K Oct 31 10:43 vulns
-```
 
 ## License
 
