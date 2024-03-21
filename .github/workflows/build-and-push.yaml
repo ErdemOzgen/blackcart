@@ -1,4 +1,4 @@
-name: Docker
+name: Docker-github-push
 
 on:
   schedule:
