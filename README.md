@@ -123,7 +123,7 @@ Incorporating Blackcart into your DevSecOps pipelines enhances your organization
 # In Blackcart repo run this commmands 
 docker compose up 
 # You can access web terminal in http://127.0.0.1:8080
-# Also You can access gotty web terminal http://127.0.0.1:8090
+# Also You can access gotty web terminal http://127.0.0.1:8090 username: blackcart password: blackcart
 ```
 
 
