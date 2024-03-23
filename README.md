@@ -3,7 +3,7 @@
 </p>
   
   
-  <p align="center"><a href="https://github.com/ErdemOzgen/blackcart">Blackcart</a> - Continuous Automated Red Teaming Dockerfile</p>
+  <p align="center"><a href="https://github.com/ErdemOzgen/blackcart">Blackcart</a> - Continuous Automated Red Teaming/DevSecOps Dockerfile</p>
     <p align="center">
     <a href="https://github.com/erdemozgen/blackcart/actions/workflows/build-and-push.yaml" alt="Publish Docker Image">
           <img src="https://img.shields.io/github/actions/workflow/status/erdemozgen/blackcart/build-and-push.yaml" /></a>
