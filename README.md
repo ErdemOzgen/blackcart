@@ -1,4 +1,9 @@
-  <p align="center"><a href="https://github.com/ErdemOzgen/blackcart">Blackcart</a> Continuous Automated Red Teaming Dockerfile</p>
+  <p align="center">
+  <img src="./assets/images/blackcart.png" width="500" alt="blackcart-logo">
+</p>
+  
+  
+  <p align="center"><a href="https://github.com/ErdemOzgen/blackcart">Blackcart</a> - Continuous Automated Red Teaming Dockerfile</p>
     <p align="center">
     <a href="https://github.com/erdemozgen/blackcart/actions/workflows/build-and-push.yaml" alt="Publish Docker Image">
           <img src="https://img.shields.io/github/actions/workflow/status/erdemozgen/blackcart/build-and-push.yaml" /></a>
@@ -13,14 +18,48 @@
       <a href="https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-publish.yml/badge.svg"><img src="https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-publish.yml/badge.svg" alt="Docker" /></a>
 </p>
 
+# Blackcart
 
-# Docker Container for Continuous Automated Red Teaming and DevSecOps Pipelines
+Blackcart is a powerful Docker container designed for Continuous Automated Red Teaming (CART) and DevSecOps pipelines. It integrates a comprehensive suite of security tools into a containerized environment, enabling continuous security testing and proactive threat mitigation. With Blackcart, you can enhance your organization's security posture and streamline your development processes.
+
+## Docker Container for Continuous Automated Red Teaming and DevSecOps Pipelines
 
 Continuous automated red teaming (CART) is an advanced cybersecurity approach that incorporates automation and continuous testing into traditional red team exercises. Unlike manual red teaming conducted annually or bi-annually, CART ensures ongoing security testing throughout the year. By continuously testing an organization's cybersecurity defenses, CART aims to detect and address vulnerabilities proactively, preventing attackers from exploiting them. This method provides a more proactive and comprehensive approach to enhancing an organization's security posture. Blackcart is a streamlined Dockerfile that comprises a collection of essential security tools suitable for Continuous Automated Red Teaming (CART).
 
-# Blackcart: Empowering DevSecOps Pipelines
+Blackcart, originally designed for CART, extends its capabilities to serve as a valuable asset in the world of DevSecOps. DevSecOps integrates security practices into the software development and delivery lifecycle, fostering a culture of security-first development.
 
-Blackcart, originally designed for Continuous Automated Red Teaming (CART), extends its capabilities to serve as a valuable asset in the world of DevSecOps. DevSecOps integrates security practices into the software development and delivery lifecycle, fostering a culture of security-first development.
+# Highlights
+- Continuous Automated Red Teaming (CART)
+- DevSecOps abilities
+- Continuous security testing
+- Vulnerability assessment
+- Threat detection
+- Automation and orchestration
+- Compliance and reporting
+- Streamlined Docker container
+- Comprehensive toolset
+- Integration with DevSecOps pipelines
+
+# Installation and Usage
+The only requirement for installation is Docker.
+
+Simply clone this repository or download the release package.
+Go to the directory and run:
+
+```bash
+docker compose up 
+```
+
+You can access GoTTY web terminal from http://127.0.0.1:8090.
+
+Default username: blackcart 
+Default password: blackcart
+
+You can perform any actions just like your UNIX-based security machine on this web terminal.
+
+From http://127.0.0.1:8080, you can also access the UI of [Blackdagger](https://github.com/ErdemOzgen/blackdagger), which is a YAML based automation tool for Continuous Red Teaming, DevSecOps, MLSecOps and more.
+
+# Features
 
 ## DevSecOps with Blackcart
 
@@ -48,7 +87,24 @@ Generate comprehensive security reports and compliance documentation using Black
 
 Incorporating Blackcart into your DevSecOps pipelines enhances your organization's ability to build and deploy secure applications while fostering a proactive security culture. It's not just about Continuous Automated Red Teaming; it's about empowering DevSecOps practices for a more secure digital future.
 
-## Installed Tools
+## CART with Blackcart
+Beyond DevSecOps, Blackcart serves as a versatile platform that empowers cybersecurity professionals with an extensive toolkit and advanced capabilities. With Blackcart, users can transform any device into a comprehensive cybersecurity testing environment, equipped with tools for advanced threat hunting, incident response planning, and forensic analysis. Blackcart facilitates proactive security measures by enabling users to conduct thorough vulnerability assessments, real-time threat detection, and compliance monitoring. 
+
+## Transform a device into a platform for cybersecurity professionals
+
+Blackcart serves as a transformative platform, equipping any device with the comprehensive capabilities needed by cybersecurity professionals with the help of containerization technology. By leveraging Blackcart, cybersecurity professionals can effectively fortify their organization's defenses, proactively identifying and addressing potential vulnerabilities while streamlining security processes with a very small effort and hardware and software resources.
+
+# What Sets Blackcart Apart?
+## Streamlined Docker Container
+Blackcart provides a containerized environment with pre-configured security tools, simplifying setup and deployment for users. Its Dockerized architecture ensures consistency and portability across different environments.
+
+## Comprehensive Toolset
+With an extensive collection of security tools, Blackcart caters to diverse testing scenarios. From vulnerability scanning to threat detection, Blackcart offers a holistic approach to security testing.
+
+## Integration with DevSecOps Pipelines
+Blackcart seamlessly integrates into DevSecOps practices, enabling organizations to incorporate security into the software development lifecycle. By automating security testing and compliance checks, Blackcart facilitates the adoption of a security-first mindset.
+
+# Installed Tools
 
 
 | Name               | Description                                  |
@@ -100,7 +156,7 @@ Incorporating Blackcart into your DevSecOps pipelines enhances your organization
 | jdk11-openjdk      | Java Development Kit 11                      |
 | Shodan             | Internet-wide network scanning tool           |
 | Censys             | Internet-wide network scanning tool           |
-| Go-dork       | he fastest dork scanner written in Go. including Google, Shodan, Bing, Duck, Yahoo and Ask.                     |
+| Go-dork       | The fastest dork scanner written in Go. including Google, Shodan, Bing, Duck, Yahoo and Ask.                     |
 | Gitleaks           | Tool for finding sensitive information in Git repositories |
 | Favicon            | Extracts favicon URLs from websites crosssearch with shodan          |
 | WaybackURLs        | Tool to discover archived web pages          |
@@ -108,26 +164,30 @@ Incorporating Blackcart into your DevSecOps pipelines enhances your organization
 | IIS Shortname Scanner | Scanner for IIS short filename disclosure |
 | JSLeak             | JavaScript link finder tool                  |
 | Smuggler           | HTTP request smuggling scanner               |
-| [WebAnalyzer](https://github.com/ErdemOzgen/WAP_API)        | Website analysis tool  (Not in blackcart you can use as different docker)  |
+| [WebAnalyzer](https://github.com/ErdemOzgen/WAP_API)        | Website analysis tool  (Not in Blackcart, you can use it as a different Docker container)  |
 | wapiti             | Comprehensive web app vulnerability scanner written in Python |
 | nano               | GNU nano is a small editor for on the terminal |
 | Dalfox             | Powerful open-source XSS scanner and utility focused on automation |
 | S3scanner          | Scan for misconfigured S3 buckets across S3-compatible APIs |
-| [Blackdagger](https://github.com/ErdemOzgen/blackdagger)        | YAML based automation tool for Contionus Red Teaming DevSecOps and MLSecOps|
+| [Blackdagger](https://github.com/ErdemOzgen/blackdagger)        | YAML based automation tool for Continuous Red Teaming, DevSecOps, MLSecOps and more|
 
 
+# Contribution
+Whether you're a seasoned expert or just starting out, there are many ways you can contribute to the Blackcart project:
 
-## How to build and run ?
+Share Your Ideas: Have a suggestion for a new feature, tool, or improvement? We'd love to hear it! Share your ideas with us and help shape the future of Blackcart.
 
-```bash
-# In Blackcart repo run this commmands 
-docker compose up 
-# You can access web terminal in http://127.0.0.1:8080
-# Also You can access gotty web terminal http://127.0.0.1:8090 username: blackcart password: blackcart
-```
+Add New Tools and Features: Is there a tool or feature you'd like to see in Blackcart? You can help expand the platform's capabilities by contributing new tools, integrations, or enhancements.
 
+Ask Questions: Got a question about how to use Blackcart or need help troubleshooting an issue? Don't hesitate to ask! We are here to support you every step of the way.
 
+Report Issues: Encountered a bug or unexpected behavior? Let us know by submitting an issue on GitHub. Your feedback helps us identify and address issues promptly.
 
-## License
+Submit Pull Requests: Want to contribute code to the project? We welcome contributions of all sizes! Whether it's adding a new tool, fixing a bug, or improving documentation, your contributions make a difference.
+
+Feel free to contribute in any way you want! Share ideas, questions, submit issues, and create pull requests.
+We welcome any and all contributions!
+
+# License
 
 This project is licensed under the [MIT License](LICENSE).
