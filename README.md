@@ -20,7 +20,7 @@
 
 # Blackcart
 
-Blackcart is a powerful Docker container designed for Continuous Automated Red Teaming (CART) and DevSecOps pipelines. It integrates a comprehensive suite of security tools into a containerized environment, enabling continuous security testing and proactive threat mitigation. With BlackCART, you can enhance your organization's security posture and streamline your development processes.
+Blackcart is a powerful Docker container designed for Continuous Automated Red Teaming (CART) and DevSecOps pipelines. It integrates a comprehensive suite of security tools into a containerized environment, enabling continuous security testing and proactive threat mitigation. With Blackcart, you can enhance your organization's security posture and streamline your development processes.
 
 ## Docker Container for Continuous Automated Red Teaming and DevSecOps Pipelines
 
@@ -51,10 +51,13 @@ docker compose up
 ```
 
 You can access GoTTY web terminal from http://127.0.0.1:8090.
-Default username: blackcart 
-Default:password: blackcart
 
-From http:127.0.0.1:8080, you can also access the UI of [Blackdagger](https://github.com/ErdemOzgen/blackdagger), which is a YAML based automation tool for Continuous Red Teaming, DevSecOps, MLSecOps and more.
+Default username: blackcart 
+Default password: blackcart
+
+You can perform any actions just like your UNIX-based security machine on this web terminal.
+
+From http://127.0.0.1:8080, you can also access the UI of [Blackdagger](https://github.com/ErdemOzgen/blackdagger), which is a YAML based automation tool for Continuous Red Teaming, DevSecOps, MLSecOps and more.
 
 # Features
 
@@ -84,16 +87,22 @@ Generate comprehensive security reports and compliance documentation using Black
 
 Incorporating Blackcart into your DevSecOps pipelines enhances your organization's ability to build and deploy secure applications while fostering a proactive security culture. It's not just about Continuous Automated Red Teaming; it's about empowering DevSecOps practices for a more secure digital future.
 
+## CART with Blackcart
+Beyond DevSecOps, Blackcart serves as a versatile platform that empowers cybersecurity professionals with an extensive toolkit and advanced capabilities. With Blackcart, users can transform any device into a comprehensive cybersecurity testing environment, equipped with tools for advanced threat hunting, incident response planning, and forensic analysis. Blackcart facilitates proactive security measures by enabling users to conduct thorough vulnerability assessments, real-time threat detection, and compliance monitoring. 
 
-# What Sets BlackCART Apart?
+## Transform a device into a platform for cybersecurity professionals
+
+Blackcart serves as a transformative platform, equipping any device with the comprehensive capabilities needed by cybersecurity professionals with the help of containerization technology. By leveraging Blackcart, cybersecurity professionals can effectively fortify their organization's defenses, proactively identifying and addressing potential vulnerabilities while streamlining security processes with a very small effort and hardware and software resources.
+
+# What Sets Blackcart Apart?
 ## Streamlined Docker Container
-BlackCART provides a containerized environment with pre-configured security tools, simplifying setup and deployment for users. Its Dockerized architecture ensures consistency and portability across different environments.
+Blackcart provides a containerized environment with pre-configured security tools, simplifying setup and deployment for users. Its Dockerized architecture ensures consistency and portability across different environments.
 
 ## Comprehensive Toolset
-With an extensive collection of security tools, BlackCART caters to diverse testing scenarios. From vulnerability scanning to threat detection, BlackCART offers a holistic approach to security testing.
+With an extensive collection of security tools, Blackcart caters to diverse testing scenarios. From vulnerability scanning to threat detection, Blackcart offers a holistic approach to security testing.
 
 ## Integration with DevSecOps Pipelines
-BlackCART seamlessly integrates into DevSecOps practices, enabling organizations to incorporate security into the software development lifecycle. By automating security testing and compliance checks, BlackCART facilitates the adoption of a security-first mindset.
+Blackcart seamlessly integrates into DevSecOps practices, enabling organizations to incorporate security into the software development lifecycle. By automating security testing and compliance checks, Blackcart facilitates the adoption of a security-first mindset.
 
 # Installed Tools
 
@@ -164,6 +173,18 @@ BlackCART seamlessly integrates into DevSecOps practices, enabling organizations
 
 
 # Contribution
+Whether you're a seasoned expert or just starting out, there are many ways you can contribute to the Blackcart project:
+
+Share Your Ideas: Have a suggestion for a new feature, tool, or improvement? We'd love to hear it! Share your ideas with us and help shape the future of Blackcart.
+
+Add New Tools and Features: Is there a tool or feature you'd like to see in Blackcart? You can help expand the platform's capabilities by contributing new tools, integrations, or enhancements.
+
+Ask Questions: Got a question about how to use Blackcart or need help troubleshooting an issue? Don't hesitate to ask! We are here to support you every step of the way.
+
+Report Issues: Encountered a bug or unexpected behavior? Let us know by submitting an issue on GitHub. Your feedback helps us identify and address issues promptly.
+
+Submit Pull Requests: Want to contribute code to the project? We welcome contributions of all sizes! Whether it's adding a new tool, fixing a bug, or improving documentation, your contributions make a difference.
+
 Feel free to contribute in any way you want! Share ideas, questions, submit issues, and create pull requests.
 We welcome any and all contributions!
 
