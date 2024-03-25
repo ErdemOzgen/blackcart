@@ -118,7 +118,7 @@ Blackcart seamlessly integrates into DevSecOps practices, enabling organizations
 | rustscan           | Fast port scanner                            |
 | zmap               | Network scanner for open ports               |
 | amass              | Subdomain enumeration tool                   |
-| gau                | Fetch known URLs from AlienVault's OTX      |
+| getallurls (gau)                | Fetch known URLs from AlienVault's OTX      |
 | traceroute         | Network diagnostic tool                      |
 | sslscan            | SSL/TLS security testing tool                |
 | massdns            | DNS resolver and list generator              |
@@ -127,21 +127,13 @@ Blackcart seamlessly integrates into DevSecOps practices, enabling organizations
 | masscan            | Fast port scanner                            |
 | hosthunter         | Subdomain discovery tool                     |
 | gobuster           | Directory/file brute-forcing tool            |
-| dirsearch          | Web path scanner                             |
 | hydra              | Password cracking tool                       |
 | gospider           | Web spider and crawler                       |
-| xsstrike           | XSS scanner                                  |
-| ssrf-sheriff       | Server-Side Request Forgery (SSRF) scanner   |
-| ssrfmap            | Server-Side Request Forgery (SSRF) scanner   |
-| corscanner         | CORS misconfiguration scanner                |
-| crlfuzz            | CRLF injection vulnerability scanner         |
 | sqlmap             | SQL injection scanner                        |
 | wget               | Network utility to retrieve files            |
 | net-tools          | Network configuration tools                  |
 | jq                 | Command-line JSON processor                  |
 | aws-cli            | AWS Command Line Interface                   |
-| wfuzz              | Web application brute-forcing tool           |
-| arjun              | Parameter-based request tool                 |
 | theharvester       | Information gathering tool                   |
 | assetfinder        | Subdomain finder tool                        |
 | orunmila           | DNS brute-forcing tool                       |

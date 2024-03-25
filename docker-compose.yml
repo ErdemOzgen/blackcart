@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   blackcart:
-    image: erdemozgen/blackcart:latest
-    build: .
+    build: ./
+    image: blackcarttest
     ports:
       - "8080:8080"
       - "8090:8090"
@@ -14,12 +14,13 @@ services:
       - GOTTY_USERNAME=blackcart
       - GOTTY_PASSWORD=blackcart
     volumes:
-      - ./scan_data:/work_dir/scan_data  # Mount ./scan_data from the host to /work_dir/scan_data in the container
+      - ./data:/work_dir/data  # Mount ./data from the host to /work_dir/data in the container
 
     # Use the following command if you want to enable the web terminal with HTTP and basic auth
-    #command: ["sh", "-c", "gotty -w --credential blackcart:blackcart /bin/bash"]
-    command: ["sh", "-c", "/startservices.sh"]
-    
+    #command: ["sh", "-c", "gotty -p 8090 -w --credential blackcart:blackcart /bin/bash"]
+    command: ["sh", "-c", "/work_dir/startservices.sh"]
+
+
     # Use the following command if you want to enable TLS with basic auth
     #command: ["sh", "-c", "gotty --tls --tls-crt /etc/gotty/cert.pem --tls-key /etc/gotty/key.pem -w --credential $GOTTY_USERNAME:$GOTTY_PASSWORD /bin/bash"]
       
