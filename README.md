@@ -87,8 +87,12 @@ Generate comprehensive security reports and compliance documentation using Black
 
 Incorporating Blackcart into your DevSecOps pipelines enhances your organization's ability to build and deploy secure applications while fostering a proactive security culture. It's not just about Continuous Automated Red Teaming; it's about empowering DevSecOps practices for a more secure digital future.
 
+In addition to these capabilities, you can use [Blackdagger](https://github.com/ErdemOzgen/blackdagger), our YAML based automation tool integrated in Blackcart to perform your DevSecOps tasks. With Blackdagger, you can benefit from its automation abilities and easiness to perform DevSecOps tasks with its user-friendly Web UI and [YAML collection with various features](https://github.com/ErdemOzgen/blackdagger-devsecops).
+
 ## CART with Blackcart
 Beyond DevSecOps, Blackcart serves as a versatile platform that empowers cybersecurity professionals with an extensive toolkit and advanced capabilities. With Blackcart, users can transform any device into a comprehensive cybersecurity testing environment, equipped with tools for advanced threat hunting, incident response planning, and forensic analysis. Blackcart facilitates proactive security measures by enabling users to conduct thorough vulnerability assessments, real-time threat detection, and compliance monitoring. 
+
+In addition to these capabilities, you can use [Blackdagger](https://github.com/ErdemOzgen/blackdagger), our YAML based automation tool integrated in Blackcart to perform your CART tasks. With Blackdagger, you can benefit from its automation abilities and easiness to perform CART actions with its user-friendly Web UI and [YAML collection with various features](https://github.com/ErdemOzgen/blackdagger-cart).
 
 ## Transform a device into a platform for cybersecurity professionals
 
