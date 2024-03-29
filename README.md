@@ -174,7 +174,7 @@ Blackcart seamlessly integrates into DevSecOps practices, enabling organizations
 | Dalfox             | Powerful open-source XSS scanner and utility focused on automation |
 | S3scanner          | Scan for misconfigured S3 buckets across S3-compatible APIs |
 | [Blackdagger](https://github.com/ErdemOzgen/blackdagger)        | YAML based automation tool for Continuous Red Teaming, DevSecOps, MLSecOps and more|
-
+| Puredns, Hakrawler,dnsprobe,qsreplace | |
 
 # Contribution
 Whether you're a seasoned expert or just starting out, there are many ways you can contribute to the Blackcart project:
