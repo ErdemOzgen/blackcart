@@ -65,7 +65,11 @@ RUN pacman -Syu --noconfirm \
     evil-winrm  \
     socat \
     chisel \
-    metasploit 
+    metasploit \
+    dnsprobe \
+    qsreplace \
+    hakrawler \
+    puredns
 
 
 
