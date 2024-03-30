@@ -56,10 +56,10 @@ jobs:
       # - name: Setup Docker buildx
       #   uses: docker/setup-buildx-action@79abd3f86f79a9d68a23c75a09a9a85889262adf
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@latest
+        uses: docker/setup-qemu-action@v3
 
       - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@latest
+        uses: docker/setup-buildx-action@79abd3f86f79a9d68a23c75a09a9a85889262adf
 
       # Login against a Docker registry except on PR
       # https://github.com/docker/login-action
