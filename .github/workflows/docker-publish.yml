@@ -38,6 +38,18 @@ jobs:
         run: |
           sudo rm -rf "/usr/local/share/boost"
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      - name: Clean runner
+        uses: jlumbroso/free-disk-space@main
+        with:
+          # all of these default to true, but feel free to set to
+          # "false" if necessary for your workflow
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: false
+          docker-images: false
+          swap-storage: true
 
       - name: Checkout repository
         uses: actions/checkout@v3
