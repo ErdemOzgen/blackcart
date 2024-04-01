@@ -1,13 +1,11 @@
 name: Docker-github-push
 
 on:
-  schedule:
-    - cron: '37 23 * * *'
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
     tags: [ 'v*.*.*' ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 env:
   REGISTRY: ghcr.io
