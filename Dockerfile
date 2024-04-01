@@ -69,7 +69,8 @@ RUN pacman -Syu --noconfirm \
     dnsprobe \
     qsreplace \
     hakrawler \
-    puredns
+    puredns \
+    parallel
 
 
 
@@ -92,7 +93,10 @@ RUN go version \
     && go install github.com/tomnomnom/waybackurls@latest \
     && go install github.com/channyein1337/jsleak@latest \
     && go install github.com/sw33tLie/sns@latest  \
-    && go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+    && go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest \
+    && go install github.com/tomnomnom/gf@latest \
+    && go install -v github.com/tomnomnom/anew@latest
+
 
 # Step 4.1: Install with GO111MODULE=on
 RUN GO111MODULE=on go install dw1.io/go-dork@latest
@@ -145,6 +149,12 @@ RUN pacman -Sy --noconfirm --overwrite '*' python-censys
 WORKDIR /work_dir
 # Add smuggler
 RUN git clone https://github.com/defparam/smuggler.git
+WORKDIR /root
+RUN git clone https://github.com/1ndianl33t/Gf-Patterns
+RUN cp ~/go/bin/gf /bin/
+RUN mkdir ~/.gf
+RUN mv ~/Gf-Patterns/*.json ~/.gf
+WORKDIR /work_dir
 # For WebAnalyzer pull this docker and run as API endpoint ==> docker pull erdemozgen/wap_api
 # Set the entry point to /bin/bash
 RUN echo 'export PATH="/root/go/bin:/sbin:/usr/bin:/root/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:$PATH"' >> ~/.bashrc
@@ -203,6 +213,7 @@ ENV BLACKDAGGER_PORT=8080
 #     chmod 0440 /etc/sudoers.d/${USER} \
 # '
 
+RUN source /work_dir/blackcartenv/bin/activate && pip3 install uro
 
 RUN curl -L https://raw.githubusercontent.com/ErdemOzgen/blackdagger/main/scripts/downloader.sh | bash
 
