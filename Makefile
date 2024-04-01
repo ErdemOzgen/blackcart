@@ -21,27 +21,36 @@ BLACKCART_LATEST_IMAGE_NAME := $(REGISTRY)/$(DOCKER_USERNAME)/$(BLACKCART_IMAGE_
 
 # Default target
 .PHONY: all
-all: build-blackarch push-blackarch
+all: check-builder build-blackarch push-images
 
-# Create Buildx builder
-.PHONY: create-builder
-create-builder:
-	-docker buildx create --name $(BUILDER_NAME) --use
+# Check if Buildx builder exists, create if not
+.PHONY: check-builder
+check-builder:
+	@if ! docker buildx ls | grep -q $(BUILDER_NAME); then \
+		docker buildx create --name $(BUILDER_NAME) --use; \
+	else \
+		docker buildx use $(BUILDER_NAME); \
+	fi
 
-# BlackArch Image Targets
-
+# BlackArch Image Target
 .PHONY: build-blackarch
-build-blackarch: create-builder
+build-blackarch:
 	@echo "Building BlackArch image $(BLACKCART_FULL_IMAGE_NAME)"
 	docker buildx build --platform linux/amd64,linux/arm64 -t $(BLACKCART_FULL_IMAGE_NAME) --push .
-	@echo "Tagging BlackArch image as latest"
 	docker buildx build --platform linux/amd64,linux/arm64 -t $(BLACKCART_LATEST_IMAGE_NAME) --push .
+# Tag the built image as latest - This step is not needed with --push, but kept for reference
+# .PHONY: tag-latest
+# tag-latest:
+# 	@echo "Tagging $(BLACKCART_FULL_IMAGE_NAME) as latest"
+# 	docker tag $(BLACKCART_FULL_IMAGE_NAME) $(BLACKCART_LATEST_IMAGE_NAME)
 
-.PHONY: push-blackarch
-push-blackarch:
-	@echo "Pushing BlackArch images"
-	docker push $(BLACKCART_FULL_IMAGE_NAME)
-	docker push $(BLACKCART_LATEST_IMAGE_NAME)
+# Push both tags to Docker Hub - This step is covered by --push in build-blackarch
+.PHONY: push-images
+push-images:
+	@echo "Pushing images to Docker Hub"
+	# These commands are not needed because --push in the build step does the job
+	# docker push $(BLACKCART_FULL_IMAGE_NAME)
+	# docker push $(BLACKCART_LATEST_IMAGE_NAME)
 
 # Login to Docker Hub
 .PHONY: login

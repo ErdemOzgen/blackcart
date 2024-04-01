@@ -5,8 +5,8 @@
   
   <p align="center"><a href="https://github.com/ErdemOzgen/blackcart">Blackcart</a> - Continuous Automated Red Teaming/DevSecOps Dockerfile</p>
     <p align="center">
-    <a href="https://github.com/erdemozgen/blackcart/actions/workflows/build-and-push.yaml" alt="Publish Docker Image">
-          <img src="https://img.shields.io/github/actions/workflow/status/erdemozgen/blackcart/build-and-push.yaml" /></a>
+    <!-- <a href="https://github.com/erdemozgen/blackcart/actions/workflows/build-and-push.yaml" alt="Publish Docker Image">
+          <img src="https://img.shields.io/github/actions/workflow/status/erdemozgen/blackcart/build-and-push.yaml" /></a> -->
     <a href="http://doge.mit-license.org" alt="License">
           <img src="http://img.shields.io/:license-mit-blue.svg" /></a>
     <a href="https://hub.docker.com/r/erdemozgen/blackcart/" alt="Docker image size">
@@ -14,8 +14,8 @@
     <a href="https://hub.docker.com/r/erdemozgen/blackcart/" alt="Docker Pulls">
           <img src="https://img.shields.io/docker/pulls/erdemozgen/blackcart" /></a>
     <a href="https://www.codefactor.io/repository/github/erdemozgen/blackcart/overview/main"><img src="https://www.codefactor.io/repository/github/erdemozgen/blackcart/badge/main" alt="CodeFactor" /></a>
-    <a href="https://github.com/ErdemOzgen/blackcart/actions/workflows/build-and-push.yaml/badge.svg"><img src="https://github.com/ErdemOzgen/blackcart/actions/workflows/build-and-push.yaml/badge.svg" alt="Build and Push Docker Image" /></a>
-      <a href="https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-publish.yml/badge.svg"><img src="https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-publish.yml/badge.svg" alt="Docker" /></a>
+    <!-- <a href="https://github.com/ErdemOzgen/blackcart/actions/workflows/build-and-push.yaml/badge.svg"><img src="https://github.com/ErdemOzgen/blackcart/actions/workflows/build-and-push.yaml/badge.svg" alt="Build and Push Docker Image" /></a> -->
+      <!-- <a href="https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-publish.yml/badge.svg"><img src="https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-publish.yml/badge.svg" alt="Docker" /></a> -->
 </p>
 
 # Blackcart
