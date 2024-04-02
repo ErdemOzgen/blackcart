@@ -174,7 +174,14 @@ Blackcart seamlessly integrates into DevSecOps practices, enabling organizations
 | Dalfox             | Powerful open-source XSS scanner and utility focused on automation |
 | S3scanner          | Scan for misconfigured S3 buckets across S3-compatible APIs |
 | [Blackdagger](https://github.com/ErdemOzgen/blackdagger)        | YAML based automation tool for Continuous Red Teaming, DevSecOps, MLSecOps and more|
-| Puredns, Hakrawler,dnsprobe,qsreplace | |
+| Puredns   | A DNS resolution and permutation tool designed for performing mass DNS queries efficiently.  |
+| Hakrawler | A web crawler designed for the discovery of endpoints and assets within web applications.     |
+| Dnsprobe  | A tool for querying DNS records with support for various types, useful for reconnaissance.    |
+| Qsreplace | A utility to quickly and easily replace query string parameters in URLs for testing.          |
+| Anew      | A simple tool for adding new lines to files, avoiding duplicates, useful for data de-duping.  |
+| Gf        | A tool designed to make file discovery easier by allowing users to create custom grep aliases for complex patterns. |
+| Parallel  | A shell tool for executing jobs in parallel, optimizing resource usage and time efficiency.   |
+| Uro       | This tool might not be widely recognized as the others. Please ensure the name is correct or provide a description if it's a specific utility within a similar domain. |
 
 # Contribution
 Whether you're a seasoned expert or just starting out, there are many ways you can contribute to the Blackcart project:
