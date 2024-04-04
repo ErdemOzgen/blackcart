@@ -213,9 +213,14 @@ ENV BLACKDAGGER_PORT=8080
 #     chmod 0440 /etc/sudoers.d/${USER} \
 # '
 
-RUN source /work_dir/blackcartenv/bin/activate && pip3 install uro
+RUN source /work_dir/blackcartenv/bin/activate && pip3 install uro && pip3 install arjun
+
 
 RUN curl -L https://raw.githubusercontent.com/ErdemOzgen/blackdagger/main/scripts/downloader.sh | bash
+RUN pacman -Sy --noconfirm --overwrite '*' zip
+RUN pacman -Sy --noconfirm --overwrite '*' unzip
+RUN bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh)
+RUN go install -v github.com/j3ssie/osmedeus@latest
 
 EXPOSE 8080 8090
 
