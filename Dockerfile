@@ -219,8 +219,10 @@ RUN source /work_dir/blackcartenv/bin/activate && pip3 install uro && pip3 insta
 RUN curl -L https://raw.githubusercontent.com/ErdemOzgen/blackdagger/main/scripts/downloader.sh | bash
 RUN pacman -Sy --noconfirm --overwrite '*' zip
 RUN pacman -Sy --noconfirm --overwrite '*' unzip
-RUN bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh)
-RUN go install -v github.com/j3ssie/osmedeus@latest
+#RUN bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh)
+#RUN go install -v github.com/j3ssie/osmedeus@latest
+
+
 
 EXPOSE 8080 8090
 
