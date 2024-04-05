@@ -222,6 +222,13 @@ RUN pacman -Sy --noconfirm --overwrite '*' unzip
 #RUN bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh)
 #RUN go install -v github.com/j3ssie/osmedeus@latest
 
+RUN wget https://github.com/wapiti-scanner/wapiti/releases/download/3.1.7/wapiti3-3.1.7.tar.gz && \
+    tar -xzvf wapiti3-3.1.7.tar.gz && \
+    cd wapiti3-3.1.7 && \
+    source /work_dir/blackcartenv/bin/activate && \
+    pip3 install . && \
+    cd .. && \
+    rm -rf wapiti*
 
 
 EXPOSE 8080 8090
