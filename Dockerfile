@@ -73,7 +73,6 @@ RUN pacman -Syu --noconfirm \
     parallel
 
 
-
 # Step 3: Set the working directory
 WORKDIR /go/src/app
 
@@ -95,7 +94,8 @@ RUN go version \
     && go install github.com/sw33tLie/sns@latest  \
     && go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest \
     && go install github.com/tomnomnom/gf@latest \
-    && go install -v github.com/tomnomnom/anew@latest
+    && go install -v github.com/tomnomnom/anew@latest \
+    && go install github.com/projectdiscovery/katana/cmd/katana@latest
 
 
 # Step 4.1: Install with GO111MODULE=on
@@ -142,7 +142,7 @@ RUN pacman-key --init && pacman-key --populate archlinux
 # Set the PATH for Miniconda
 #RUN echo 'export PATH=$PATH:/opt/anaconda3/bin' >> ~/.bashrc
 
-RUN pacman -Sy --noconfirm --overwrite '*' jre11-openjdk
+#RUN pacman -Sy --noconfirm --overwrite '*' jre11-openjdk
 RUN pacman -Sy --noconfirm --overwrite '*' jdk11-openjdk
 RUN pacman -Sy --noconfirm --overwrite '*' python-shodan
 RUN pacman -Sy --noconfirm --overwrite '*' python-censys
