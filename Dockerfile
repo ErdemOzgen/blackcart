@@ -159,7 +159,7 @@ WORKDIR /work_dir
 # Set the entry point to /bin/bash
 RUN echo 'export PATH="/root/go/bin:/sbin:/usr/bin:/root/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/usr/bin/core_perl:$PATH"' >> ~/.bashrc
 RUN python -m venv blackcartenv
-RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
+#RUN echo 'source blackcartenv/bin/activate' >> ~/.bashrc
 RUN echo "alias install='pacman -S --noconfirm --overwrite \"*\"'" >> ~/.bashrc
 RUN echo "alias update='pacman -Syu --noconfirm --overwrite \"*\"'" >> ~/.bashrc
 RUN echo "alias remove='pacman -R --noconfirm'" >> ~/.bashrc
