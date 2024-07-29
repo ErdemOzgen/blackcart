@@ -164,6 +164,7 @@ RUN echo "alias install='pacman -S --noconfirm --overwrite \"*\"'" >> ~/.bashrc
 RUN echo "alias update='pacman -Syu --noconfirm --overwrite \"*\"'" >> ~/.bashrc
 RUN echo "alias remove='pacman -R --noconfirm'" >> ~/.bashrc
 RUN echo "alias search='pacman -Ss'" >> ~/.bashrc
+RUN echo "alias pythonenv='python -m venv '" >> ~/.bashrc
 RUN source ~/.bashrc
 RUN pacman -Sy --noconfirm --overwrite '*' openssh
 # Generate SSH host keys
