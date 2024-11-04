@@ -170,10 +170,10 @@ RUN pacman -Sy --noconfirm --overwrite '*' openssh
 # Generate SSH host keys
 RUN ssh-keygen -A
 
-RUN wget https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linux_amd64.tar.gz -O gotty.tar.gz \
-    && tar -xzf gotty.tar.gz \
-    && mv gotty /usr/local/bin/ \
-    && rm gotty.tar.gz
+# RUN wget https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linux_amd64.tar.gz -O gotty.tar.gz \
+#     && tar -xzf gotty.tar.gz \
+#     && mv gotty /usr/local/bin/ \
+#     && rm gotty.tar.gz
 
 
 # Generate a self-signed SSL certificate
@@ -216,8 +216,15 @@ ENV BLACKDAGGER_PORT=8080
 
 RUN source /work_dir/blackcartenv/bin/activate && pip3 install uro && pip3 install arjun
 
+#RUN curl -L https://raw.githubusercontent.com/ErdemOzgen/blackdagger/main/scripts/downloader-docker.sh -o blackdagger-installer.sh
+COPY ./blackdagger-installer.sh /usr/local/bin/blackdagger-installer.sh
+RUN chmod +x /usr/local/bin/blackdagger-installer.sh
+RUN /usr/local/bin/blackdagger-installer.sh
 
-RUN curl -L https://raw.githubusercontent.com/ErdemOzgen/blackdagger/main/scripts/downloader.sh | bash
+#RUN  bash blackdagger-installer.sh
+#RUN rm blackdagger-installer.sh
+
+#RUN curl -L https://raw.githubusercontent.com/ErdemOzgen/blackdagger/main/scripts/downloader.sh | bash
 RUN pacman -Sy --noconfirm --overwrite '*' zip
 RUN pacman -Sy --noconfirm --overwrite '*' unzip
 #RUN bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh)
@@ -246,7 +253,7 @@ EXPOSE 8080 8090
 COPY ./entrypoint.sh /entrypoint.sh
 COPY ./startservices.sh /startservices.sh
 COPY update_telegram_config.sh /usr/local/bin/update_telegram_config
-RUN mv /work_dir/blackdagger /usr/local/bin/blackdagger
+#RUN mv /work_dir/blackdagger /usr/local/bin/blackdagger
 RUN sh -c 'cp /root/go/bin/* /usr/bin/'
 RUN source ~/.bashrc
 RUN chmod +x /entrypoint.sh
