@@ -2,3 +2,5 @@
 docker/.env
 todo.md
 data/
+.DS_Store
+work_dir/*
