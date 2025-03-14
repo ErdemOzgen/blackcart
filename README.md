@@ -16,6 +16,17 @@
     <a href="https://www.codefactor.io/repository/github/erdemozgen/blackcart/overview/main"><img src="https://www.codefactor.io/repository/github/erdemozgen/blackcart/badge/main" alt="CodeFactor" /></a>
     <!-- <a href="https://github.com/ErdemOzgen/blackcart/actions/workflows/build-and-push.yaml/badge.svg"><img src="https://github.com/ErdemOzgen/blackcart/actions/workflows/build-and-push.yaml/badge.svg" alt="Build and Push Docker Image" /></a> -->
       <!-- <a href="https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-publish.yml/badge.svg"><img src="https://github.com/ErdemOzgen/blackcart/actions/workflows/docker-publish.yml/badge.svg" alt="Docker" /></a> -->
+        <a href="https://www.blackhat.com/us-24/arsenal/schedule/index.html#blackdagger-39274">
+    <img src="https://github.com/toolswatch/badges/blob/master/arsenal/usa/2024.svg" />
+  </a>
+  <a href="https://www.blackhat.com/sector/2024/arsenal/schedule/index.html#blackdagger-40889">
+    <img src="https://github.com/toolswatch/badges/blob/master/arsenal/sector/2024.svg" />
+  </a>
+  <a href="https://www.blackhat.com/eu-24/arsenal/schedule/index.html#blackdagger-41344">
+    <img src="https://github.com/ataseren/badges/blob/master/arsenal/europe/2024.svg" />
+  </a>
+    <a href="https://www.blackhat.com/asia-25/arsenal/schedule/index.html#blackdagger-43296">
+    <img src="https://github.com/ataseren/badges/blob/master/arsenal/asia/2025.svg" />
 </p>
 
 # Blackcart
