@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="./assets/images/blackcart.png" width="500" alt="blackcart-logo">
-  <img src="./assets/images/blackdagger.png" width="500" alt="blackdagger-logo">
+  <img src="./assets/images/blackcart.png" width="300" alt="blackcart-logo">
+  <img src="./assets/images/blackdagger.png" width="300" alt="blackdagger-logo">
 </p>
   
   
