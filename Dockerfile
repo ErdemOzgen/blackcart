@@ -52,7 +52,6 @@ RUN pacman -Syu --noconfirm \
     pcre \
     pkg-config \
     gitleaks \
-    wapiti \
     nano \
     dalfox \
     s3scanner \
