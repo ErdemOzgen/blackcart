@@ -1,0 +1,128 @@
+version: '3.8'
+
+services:
+  blackcart:
+    image: erdemozgen/blackcart:latest
+    build: .
+    ports:
+      - "8080:8080"
+      - "8090:8090"
+    environment:
+      - TELEGRAM_API_KEY=your_telegram_api_key
+      - TELEGRAM_CHAT_ID=your_telegram_chat_id
+      - TERM=xterm
+      - GOTTY_USERNAME=blackcart
+      - GOTTY_PASSWORD=blackcart
+    volumes:
+      - ./scan_data:/work_dir/scan_data
+      - ./data/.blackdagger/dags:/root/.blackdagger/dags
+      - ./data/.blackdagger/logs:/root/.blackdagger/logs
+      - ./data/.blackdagger/suspend:/root/.blackdagger/suspend
+      - ./data/.blackdagger/data:/root/.blackdagger/data
+      - ./work_dir:/work_dir
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: ["sh", "-c", "/startservices.sh"]
+
+  nginx:
+    image: "defectdojo/defectdojo-nginx:latest"
+    depends_on:
+      - uwsgi
+    environment:
+      NGINX_METRICS_ENABLED: "false"
+      DD_UWSGI_HOST: "uwsgi"
+      DD_UWSGI_PORT: "3031"
+    volumes:
+      - defectdojo_media:/usr/share/nginx/html/media
+    ports:
+      - "8070:8080"
+      - "8443:8443"
+
+  uwsgi:
+    image: "defectdojo/defectdojo-django:latest"
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    environment:
+      DD_DEBUG: 'True'
+      DD_ALLOWED_HOSTS: "*"
+      DD_DATABASE_URL: postgresql://defectdojo:defectdojo@postgres:5432/defectdojo
+      DD_CELERY_BROKER_URL: redis://redis:6379/0
+      DD_SECRET_KEY: ${DJANGO_SECRET_KEY}
+      DD_CREDENTIAL_AES_256_KEY: ${DJANGO_AES_KEY}
+
+      
+    volumes:
+      - ./docker/extra_settings:/app/docker/extra_settings
+      - defectdojo_media:/app/media
+
+  celerybeat:
+    image: "defectdojo/defectdojo-django:latest"
+    depends_on:
+      - postgres
+      - redis
+    entrypoint: ['/wait-for-it.sh', 'postgres:5432', '-t', '30', '--', '/entrypoint-celery-beat.sh']
+    env_file:
+      - .env
+    environment:
+      DD_DATABASE_URL: postgresql://defectdojo:defectdojo@postgres:5432/defectdojo
+      DD_CELERY_BROKER_URL: redis://redis:6379/0
+      DD_SECRET_KEY: ${DJANGO_SECRET_KEY}
+      DD_CREDENTIAL_AES_256_KEY: ${DJANGO_AES_KEY}
+    volumes:
+      - ./docker/extra_settings:/app/docker/extra_settings
+
+  celeryworker:
+    image: "defectdojo/defectdojo-django:latest"
+    depends_on:
+      - postgres
+      - redis
+    entrypoint: ['/wait-for-it.sh', 'postgres:5432', '-t', '30', '--', '/entrypoint-celery-worker.sh']
+    env_file:
+      - .env
+    environment:
+      DD_DATABASE_URL: postgresql://defectdojo:defectdojo@postgres:5432/defectdojo
+      DD_CELERY_BROKER_URL: redis://redis:6379/0
+      DD_SECRET_KEY: ${DJANGO_SECRET_KEY}
+      DD_CREDENTIAL_AES_256_KEY: ${DJANGO_AES_KEY}
+    volumes:
+      - ./docker/extra_settings:/app/docker/extra_settings
+      - defectdojo_media:/app/media
+
+  initializer:
+    image: "defectdojo/defectdojo-django:latest"
+    depends_on:
+      - postgres
+    entrypoint: ['/wait-for-it.sh', 'postgres:5432', '--', '/entrypoint-initializer.sh']
+    env_file:
+      - .env
+    environment:
+      DD_DATABASE_URL: postgresql://defectdojo:defectdojo@postgres:5432/defectdojo
+      DD_ADMIN_USER: admin
+      DD_ADMIN_MAIL: admin@defectdojo.local
+      DD_ADMIN_FIRST_NAME: Admin
+      DD_ADMIN_LAST_NAME: User
+      DD_INITIALIZE: "true"
+      DD_SECRET_KEY: ${DJANGO_SECRET_KEY}
+      DD_CREDENTIAL_AES_256_KEY: ${DJANGO_AES_KEY}
+    volumes:
+      - ./docker/extra_settings:/app/docker/extra_settings
+
+  postgres:
+    image: postgres:17.4-alpine
+    environment:
+      POSTGRES_DB: defectdojo
+      POSTGRES_USER: defectdojo
+      POSTGRES_PASSWORD: defectdojo
+    volumes:
+      - defectdojo_postgres:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7.2.5-alpine
+    volumes:
+      - defectdojo_redis:/data
+
+volumes:
+  defectdojo_postgres: {}
+  defectdojo_media: {}
+  defectdojo_redis: {}
