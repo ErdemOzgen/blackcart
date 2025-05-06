@@ -78,10 +78,6 @@ WORKDIR /go/src/app
 # Step 4: Install the Go scripts
 RUN go version \
     && go install github.com/tomnomnom/assetfinder@latest \
-    && go install github.com/proditis/orunmila@latest \
-    && go install github.com/proditis/mini-tools/cspparse@latest \
-    && go install github.com/proditis/mini-tools/certnames@latest \
-    && go install github.com/proditis/mini-tools/sniprobe@latest \
     && go install github.com/outersky/har-tools/cmd/harx@latest \
     && go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest \
     && go install -v github.com/projectdiscovery/notify/cmd/notify@latest \
