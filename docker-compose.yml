@@ -15,10 +15,11 @@ services:
       - GOTTY_PASSWORD=blackcart
     volumes:
       - ./scan_data:/work_dir/scan_data  # Mount ./scan_data from the host to /work_dir/scan_data in the container
-      - ./data/.blackdagger/dags:/root/.blackdagger/dags
-      - ./data/.blackdagger/logs:/root/.blackdagger/logs
-      - ./data/.blackdagger/suspend:/root/.blackdagger/suspend
-      - ./data/.blackdagger/data:/root/.blackdagger/data
+      - ./data/blackdagger/config:/root/.config/blackdagger    
+      - ./data/blackdagger/dags:/root/.config/blackdagger/dags
+      - ./data/blackdagger/logs:/root/.local/share/blackdagger/logs
+      - ./data/blackdagger/suspend:/root/.local/share/blackdagger/suspend
+      - ./data/blackdagger/history:/root/.local/share/blackdagger/history
       - ./work_dir:/work_dir
       - /var/run/docker.sock:/var/run/docker.sock
 
