@@ -1,7 +1,7 @@
 # Makefile for building and pushing Docker images for Kali and BlackArch
 
 # Common Variables
-VERSION := 1.1.3
+VERSION := 1.1.4
 DOCKER_USERNAME := erdemozgen
 REGISTRY := docker.io
 
